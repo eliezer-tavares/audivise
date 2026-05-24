@@ -1,0 +1,5 @@
+/target
+/.vercel
+.env.local
+.env
+Cargo.lock.bak
