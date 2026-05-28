@@ -1,0 +1,14 @@
+name = "audivise-verification"
+version = "0.1.0"
+packagesDir = ".lake/packages"
+
+[[lean_lib]]
+name = "FormalVerification"
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+
+[linter]
+style = true
+unusedVariables = false
