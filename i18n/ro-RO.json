@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "Română (România)",
+    "englishName": "Romanian (Romania)",
+    "bcp47": "ro-RO",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Microsoft Ana", "Microsoft Emil", "Google română", "Ioana"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "Asistent de încadrare 100% local"
+  },
+  "status": {
+    "ready": "Audivise este gata. Apasă butonul Pornește asistentul pentru a începe.",
+    "engineLoading": "Se încarcă motorul local…",
+    "engineReady": "Motorul Rust/WebAssembly este gata (versiunea {version}). Zero internet. Zero cloud. Nimic nu părăsește acest dispozitiv.",
+    "engineError": "Nu s-a putut încărca motorul local: {error}",
+    "deviceMobile": "Detectat: telefon mobil",
+    "deviceDesktop": "Detectat: calculator (cameră web)",
+    "cameraFrontMode": "Mod curent: cameră frontală",
+    "cameraBackMode": "Mod curent: cameră posterioară sau camera laptopului"
+  },
+  "buttons": {
+    "start": "Pornește asistentul",
+    "stop": "Oprește asistentul",
+    "repeat": "Repetă ultima recomandare",
+    "cameraFront": "Schimbă camera: frontală",
+    "cameraBack": "Schimbă camera: posterioară",
+    "about": "Despre Audivise",
+    "settings": "Limbă și voce",
+    "close": "Închide",
+    "ok": "Am înțeles"
+  },
+  "aria": {
+    "start": "Pornește sau oprește asistentul de încadrare",
+    "repeat": "Repetă ultima recomandare rostită",
+    "camera": "Comută între camera frontală și cea posterioară",
+    "about": "Ascultă informații despre proiectul Audivise",
+    "settings": "Deschide setările de limbă și voce",
+    "closeSettings": "Închide setările",
+    "interfaceLanguage": "Selectează limba interfeței",
+    "voiceLanguage": "Selectează limba vocii",
+    "voiceSelect": "Selectează o voce instalată pentru limba aleasă",
+    "rate": "Ajustează viteza vorbirii",
+    "status": "Starea asistentului"
+  },
+  "fileProtocol": {
+    "warning": "Ai deschis index.html direct de pe disc. Din motive de securitate ale browserului, camera și motorul au nevoie de un server local: închide această filă și pornește aplicația cu programul de lansare pentru sistemul tău — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux) sau iniciar-audivise-android.sh (Android, prin Termux).",
+    "blocked": "Această aplicație trebuie deschisă prin programul de lansare local. Închide această filă și dă dublu clic pe programul de lansare al sistemului tău (INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "Camera este activă. Îți analizez fața.",
+    "cameraError": "Eroare la accesarea camerei. Verifică permisiunea în browser.",
+    "stopped": "Asistent oprit.",
+    "noFace": "Nu ți-am găsit fața. Verifică dacă camera este pornită și neacoperită.",
+    "nothingToRepeat": "Încă nu există recomandări de repetat.",
+    "engineLoading": "Motorul se încarcă încă. Încearcă din nou peste un moment.",
+    "cameraRestartError": "Nu am reușit să repornesc camera.",
+    "frontSelected": "Camera frontală selectată.",
+    "backSelected": "Camera posterioară selectată."
+  },
+  "issues": {
+    "MOVE_RIGHT": "mută telefonul spre dreapta",
+    "MOVE_LEFT": "mută telefonul spre stânga",
+    "LOWER_CAMERA": "coboară puțin camera",
+    "RAISE_CAMERA": "ridică puțin camera",
+    "MOVE_CLOSER": "apropie fața de cameră",
+    "MOVE_AWAY": "depărtează fața de cameră"
+  },
+  "verdict": {
+    "perfect": "Încadrare perfectă! Poți începe înregistrarea."
+  },
+  "about": {
+    "narrative": "Audivise, versiunea 1, ediție locală și privată. Sistem proiectat de Eliezer Tavares de Oliveira. Aceasta este continuarea lucrării începute în cadrul proiectului „Projeto Integrador V” (proiectul integrator V), la Ingineria Calculatoarelor din cadrul UNIVESP. Acum este un proiect personal, non-academic. Această ediție rulează în întregime pe dispozitivul tău: motorul de decizie este scris în Rust și compilat în WebAssembly, iar detectarea feței este locală. Nicio imagine, nicio coordonată și niciun cuvânt nu părăsesc calculatorul tău."
+  },
+  "settings": {
+    "title": "Limbă și voce",
+    "interfaceLanguage": "Limba interfeței",
+    "voiceLanguage": "Limba vocii",
+    "voice": "Voce instalată",
+    "voiceSystemDefault": "Vocea implicită a sistemului pentru această limbă",
+    "voiceNone": "Nicio voce instalată pentru această limbă",
+    "speechRate": "Viteza vorbirii",
+    "saved": "Preferințele au fost salvate.",
+    "testVoice": "Testează vocea"
+  },
+  "voiceInstall": {
+    "title": "Nicio voce găsită pe acest sistem",
+    "intro": "Nu există o voce instalată pentru {language}. Pentru a auzi recomandările în această limbă, instalează o voce de sistem — trebuie să faci acest lucru o singură dată:",
+    "windows": "Windows: Setări → Oră și limbă → Vorbire → Gestionare voci → Adăugare voci → alege {language}.",
+    "macos": "macOS: Setări sistem → Accesibilitate → Conținut rostit → Voce de sistem → Gestionare voci → descarcă o voce pentru {language}.",
+    "android": "Android: Setări → Sistem → Limbi și introducere → Ieșire → Sinteză vocală → Google Text-to-Speech → Instalare date voce → {language}.",
+    "ios": "iPhone/iPad: Setări → Accesibilitate → Conținut rostit → Voci → adaugă o voce pentru {language}.",
+    "linux": "Linux: instalează speech-dispatcher cu o voce pentru {language} (de exemplu, espeak-ng sau RHVoice) sau folosește Google Chrome, care vine cu voci proprii.",
+    "chrome": "Chrome: vocile Google sunt de obicei incluse; asigură-te că browserul este actualizat și apasă Verifică din nou.",
+    "recheck": "Verifică din nou",
+    "once": "Acest anunț apare o singură dată pentru fiecare limbă. Audivise funcționează și fără voce: toate recomandările sunt afișate și în scris."
+  },
+  "footer": {
+    "architect": "Proiectat de Eliezer Tavares de Oliveira.",
+    "history": "Continuarea lucrării începute în proiectul „Projeto Integrador V” (Ingineria Calculatoarelor, UNIVESP) — astăzi un proiect personal, non-academic. Toate prelucrările au loc pe acest dispozitiv, fără cloud."
+  }
+}

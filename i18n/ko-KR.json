@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "한국어 (대한민국)",
+    "englishName": "Korean (South Korea)",
+    "bcp47": "ko-KR",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Microsoft Heami", "Microsoft SunHi", "Google 한국어", "Yuna", "Sora", "Nara"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "100% 로컬 프레이밍 어시스턴트"
+  },
+  "status": {
+    "ready": "Audivise가 준비되었습니다. ‘어시스턴트 시작’ 버튼을 눌러 시작하세요.",
+    "engineLoading": "로컬 엔진을 불러오는 중…",
+    "engineReady": "Rust/WebAssembly 엔진이 준비되었습니다(버전 {version}). 인터넷 없음. 클라우드 없음. 이 기기를 벗어나는 것은 아무것도 없습니다.",
+    "engineError": "로컬 엔진을 불러오지 못했습니다: {error}",
+    "deviceMobile": "감지됨: 휴대폰",
+    "deviceDesktop": "감지됨: 컴퓨터(웹캠)",
+    "cameraFrontMode": "현재 모드: 전면 카메라",
+    "cameraBackMode": "현재 모드: 후면 카메라 또는 노트북 카메라"
+  },
+  "buttons": {
+    "start": "어시스턴트 시작",
+    "stop": "어시스턴트 중지",
+    "repeat": "마지막 안내 다시 듣기",
+    "cameraFront": "카메라 전환: 전면",
+    "cameraBack": "카메라 전환: 후면",
+    "about": "Audivise 정보",
+    "settings": "언어 및 음성",
+    "close": "닫기",
+    "ok": "알겠습니다"
+  },
+  "aria": {
+    "start": "프레이밍 어시스턴트 시작 또는 중지",
+    "repeat": "마지막 음성 안내 다시 듣기",
+    "camera": "전면 카메라와 후면 카메라 전환",
+    "about": "Audivise 프로젝트 정보 듣기",
+    "settings": "언어 및 음성 설정 열기",
+    "closeSettings": "설정 닫기",
+    "interfaceLanguage": "인터페이스 언어 선택",
+    "voiceLanguage": "음성 언어 선택",
+    "voiceSelect": "선택한 언어에 설치된 음성 선택",
+    "rate": "말하기 속도 조절",
+    "status": "어시스턴트 상태"
+  },
+  "fileProtocol": {
+    "warning": "index.html을 디스크에서 바로 열었습니다. 브라우저 보안 규칙 때문에 카메라와 엔진에는 로컬 서버가 필요합니다. 이 탭을 닫고 사용 중인 시스템의 실행 파일로 앱을 시작하세요 — INICIAR-AUDIVISE.bat(Windows), iniciar-audivise-mac.command(macOS), iniciar-audivise-linux.sh(Linux), 또는 iniciar-audivise-android.sh(Android, Termux 사용).",
+    "blocked": "이 앱은 로컬 런처를 통해서만 열 수 있습니다. 이 탭을 닫고 사용 중인 시스템의 런처를 두 번 클릭하세요(INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "카메라가 켜졌습니다. 얼굴을 분석하는 중입니다.",
+    "cameraError": "카메라에 접근하는 중 오류가 발생했습니다. 브라우저 권한을 확인하세요.",
+    "stopped": "어시스턴트를 중지했습니다.",
+    "noFace": "얼굴을 찾지 못했습니다. 카메라가 켜져 있고 가려지지 않았는지 확인하세요.",
+    "nothingToRepeat": "아직 다시 들을 수 있는 안내가 없습니다.",
+    "engineLoading": "엔진이 아직 불러오는 중입니다. 잠시 후 다시 시도하세요.",
+    "cameraRestartError": "카메라를 다시 시작하지 못했습니다.",
+    "frontSelected": "전면 카메라를 선택했습니다.",
+    "backSelected": "후면 카메라를 선택했습니다."
+  },
+  "issues": {
+    "MOVE_RIGHT": "휴대폰을 오른쪽으로 옮겨 주세요",
+    "MOVE_LEFT": "휴대폰을 왼쪽으로 옮겨 주세요",
+    "LOWER_CAMERA": "카메라를 조금 내려 주세요",
+    "RAISE_CAMERA": "카메라를 조금 올려 주세요",
+    "MOVE_CLOSER": "얼굴을 카메라에 가까이 해 주세요",
+    "MOVE_AWAY": "얼굴을 카메라에서 멀리해 주세요"
+  },
+  "verdict": {
+    "perfect": "완벽한 구도입니다! 녹화를 시작할 수 있습니다."
+  },
+  "about": {
+    "narrative": "Audivise, 버전 1, 완전 로컬·프라이빗 에디션. 시스템 아키텍처 설계: Eliezer Tavares de Oliveira. 이 프로젝트는 UNIVESP 컴퓨터공학 과정의 ‘프로젠투 인테그라도르 V’(Projeto Integrador V)에서 시작된 작업의 연속입니다. 현재는 개인적인 비학술 프로젝트입니다. 이 에디션은 전적으로 여러분의 기기에서 실행됩니다. 판단 엔진은 Rust로 작성되어 WebAssembly로 컴파일되었고, 얼굴 인식도 로컬에서 이루어집니다. 어떤 이미지, 좌표, 말도 여러분의 컴퓨터 밖으로 나가지 않습니다."
+  },
+  "settings": {
+    "title": "언어 및 음성",
+    "interfaceLanguage": "인터페이스 언어",
+    "voiceLanguage": "음성 언어",
+    "voice": "설치된 음성",
+    "voiceSystemDefault": "이 언어의 시스템 기본 음성",
+    "voiceNone": "이 언어에 설치된 음성이 없습니다",
+    "speechRate": "말하기 속도",
+    "saved": "설정이 저장되었습니다.",
+    "testVoice": "음성 테스트"
+  },
+  "voiceInstall": {
+    "title": "이 시스템에서 음성을 찾을 수 없습니다",
+    "intro": "{language}용 음성이 설치되어 있지 않습니다. 이 언어로 안내를 들으려면 시스템 음성을 설치하세요 — 한 번만 설치하면 됩니다:",
+    "windows": "Windows: 설정 → 시간 및 언어 → 음성 → 음성 관리 → 음성 추가 → {language} 선택.",
+    "macos": "macOS: 시스템 설정 → 손쉬운 사용 → 말하기 → 시스템 음성 → 음성 관리 → {language} 음성 다운로드.",
+    "android": "Android: 설정 → 시스템 → 언어 및 입력 → 출력 → 문자 음성 변환 → Google Text-to-Speech → 음성 데이터 설치 → {language}.",
+    "ios": "iPhone/iPad: 설정 → 손쉬운 사용 → 말하기 → 음성 → {language} 음성 추가.",
+    "linux": "Linux: {language} 음성이 포함된 speech-dispatcher(예: espeak-ng 또는 RHVoice)를 설치하거나, 자체 음성이 내장된 Google Chrome을 사용하세요.",
+    "chrome": "Chrome: Google 음성은 보통 기본 내장되어 있습니다. 브라우저가 최신 상태인지 확인한 후 ‘다시 확인’을 누르세요.",
+    "recheck": "다시 확인",
+    "once": "이 안내는 언어별로 한 번만 표시됩니다. 음성이 없어도 Audivise는 작동합니다. 모든 안내는 텍스트로도 표시됩니다."
+  },
+  "footer": {
+    "architect": "Eliezer Tavares de Oliveira 아키텍처 설계.",
+    "history": "UNIVESP 컴퓨터공학 과정의 Projeto Integrador V(‘프로젠투 인테그라도르 V’)에서 시작된 작업의 연속 — 오늘날에는 개인적인 비학술 프로젝트입니다. 모든 처리는 이 기기에서 이루어지며, 클라우드를 사용하지 않습니다."
+  }
+}

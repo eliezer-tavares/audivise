@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "日本語 (日本)",
+    "englishName": "Japanese (Japan)",
+    "bcp47": "ja-JP",
+    "dir": "ltr",
+    "sentenceSeparator": "。",
+    "voiceHints": ["Microsoft Nanami", "Microsoft Ichiro", "Google 日本語", "Kyoko", "Otoya", "O-ren"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "100% ローカル動作のフレーミングアシスタント"
+  },
+  "status": {
+    "ready": "Audivise の準備ができました。「アシスタントを開始」ボタンを押して開始してください。",
+    "engineLoading": "ローカルエンジンを読み込んでいます…",
+    "engineReady": "Rust/WebAssembly エンジンの準備ができました（バージョン {version}）。インターネット接続なし。クラウドなし。この端末の外には何も出ていきません。",
+    "engineError": "ローカルエンジンの読み込みに失敗しました: {error}",
+    "deviceMobile": "検出: スマートフォン",
+    "deviceDesktop": "検出: パソコン（ウェブカメラ）",
+    "cameraFrontMode": "現在のモード: フロントカメラ",
+    "cameraBackMode": "現在のモード: リアカメラまたはノートパソコンのカメラ"
+  },
+  "buttons": {
+    "start": "アシスタントを開始",
+    "stop": "アシスタントを停止",
+    "repeat": "最後のガイドをもう一度",
+    "cameraFront": "カメラを切り替え: フロント",
+    "cameraBack": "カメラを切り替え: リア",
+    "about": "Audivise について",
+    "settings": "言語と音声",
+    "close": "閉じる",
+    "ok": "わかりました"
+  },
+  "aria": {
+    "start": "フレーミングアシスタントを開始または停止します",
+    "repeat": "最後に読み上げられたガイドをもう一度読み上げます",
+    "camera": "フロントカメラとリアカメラを切り替えます",
+    "about": "Audivise プロジェクトの情報を聞きます",
+    "settings": "言語と音声の設定を開きます",
+    "closeSettings": "設定を閉じます",
+    "interfaceLanguage": "インターフェースの言語を選択します",
+    "voiceLanguage": "音声の言語を選択します",
+    "voiceSelect": "選択した言語にインストール済みの音声を選択します",
+    "rate": "読み上げの速さを調整します",
+    "status": "アシスタントの状態"
+  },
+  "fileProtocol": {
+    "warning": "index.html をディスクから直接開いています。ブラウザーのセキュリティ規則により、カメラとエンジンにはローカルサーバーが必要です。このタブを閉じて、お使いのシステムの起動ファイルからアプリを起動してください — INICIAR-AUDIVISE.bat（Windows）、iniciar-audivise-mac.command（macOS）、iniciar-audivise-linux.sh（Linux）、または iniciar-audivise-android.sh（Android、Termux 経由）。",
+    "blocked": "このアプリはローカルランチャーから開く必要があります。このタブを閉じて、お使いのシステムのランチャーをダブルクリックしてください（INICIAR-AUDIVISE）。"
+  },
+  "speech": {
+    "cameraOn": "カメラをオンにしました。顔を分析しています。",
+    "cameraError": "カメラにアクセスできませんでした。ブラウザーの権限を確認してください。",
+    "stopped": "アシスタントを停止しました。",
+    "noFace": "顔が見つかりませんでした。カメラがオンになっていて、遮られていないか確認してください。",
+    "nothingToRepeat": "まだ繰り返せるガイドはありません。",
+    "engineLoading": "エンジンはまだ読み込み中です。少々待ってからもう一度お試しください。",
+    "cameraRestartError": "カメラを再起動できませんでした。",
+    "frontSelected": "フロントカメラを選択しました。",
+    "backSelected": "リアカメラを選択しました。"
+  },
+  "issues": {
+    "MOVE_RIGHT": "スマートフォンを右に動かしてください。",
+    "MOVE_LEFT": "スマートフォンを左に動かしてください。",
+    "LOWER_CAMERA": "カメラを少し下げてください。",
+    "RAISE_CAMERA": "カメラを少し上げてください。",
+    "MOVE_CLOSER": "顔をカメラに近づけてください。",
+    "MOVE_AWAY": "顔をカメラから離してください。"
+  },
+  "verdict": {
+    "perfect": "完璧な構図です！録画を開始できます。"
+  },
+  "about": {
+    "narrative": "Audivise、バージョン 1、ローカル＆プライベート版。システムのアーキテクチャ設計: Eliezer Tavares de Oliveira。これは UNIVESP のコンピューター工学課程の「プロジェクト・インテグラドールV」（Projeto Integrador V）で始まった取り組みの続きです。現在は個人の非学術プロジェクトです。この版は完全にあなたの端末上で動作します。意思決定エンジンは Rust で書かれ WebAssembly にコンパイルされており、顔検出もローカルで行われます。画像も座標も言葉も、何ひとつあなたのマシンの外に出ることはありません。"
+  },
+  "settings": {
+    "title": "言語と音声",
+    "interfaceLanguage": "インターフェースの言語",
+    "voiceLanguage": "音声の言語",
+    "voice": "インストール済みの音声",
+    "voiceSystemDefault": "この言語のシステム既定の音声",
+    "voiceNone": "この言語にインストール済みの音声はありません",
+    "speechRate": "読み上げの速さ",
+    "saved": "設定を保存しました。",
+    "testVoice": "音声をテスト"
+  },
+  "voiceInstall": {
+    "title": "このシステムでは音声が見つかりません",
+    "intro": "{language} 用の音声がインストールされていません。この言語でガイドを聞くには、システムの音声をインストールしてください — 必要なのは一度だけです:",
+    "windows": "Windows: 設定 → 時刻と言語 → 音声 → 音声の管理 → 音声の追加 → {language} を選択。",
+    "macos": "macOS: システム設定 → アクセシビリティ → 読み上げコンテンツ → システムボイス → ボイスを管理 → {language} のボイスをダウンロード。",
+    "android": "Android: 設定 → システム → 言語と入力 → 出力 → テキスト読み上げ出力 → Google Text-to-Speech → 音声データをインストール → {language}。",
+    "ios": "iPhone/iPad: 設定 → アクセシビリティ → 読み上げコンテンツ → ボイス → {language} のボイスを追加。",
+    "linux": "Linux: {language} の音声付きの speech-dispatcher をインストールするか（例: espeak-ng、RHVoice）、音声を内蔵した Google Chrome をお使いください。",
+    "chrome": "Chrome: Google の音声は通常最初から組み込まれています。ブラウザーが最新であることを確認し、「再確認」をタップしてください。",
+    "recheck": "再確認",
+    "once": "この通知は言語ごとに一度だけ表示されます。音声がなくても Audivise は動作します。すべてのガイドはテキストでも表示されます。"
+  },
+  "footer": {
+    "architect": "Eliezer Tavares de Oliveira によるアーキテクチャ設計。",
+    "history": "UNIVESP のコンピューター工学課程における「プロジェクト・インテグラドールV」（Projeto Integrador V）で始まった取り組みの続き — 今は個人の非学術プロジェクトです。すべての処理はこの端末上で行われ、クラウドは使いません。"
+  }
+}

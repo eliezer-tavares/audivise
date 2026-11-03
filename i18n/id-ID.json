@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "Bahasa Indonesia (Indonesia)",
+    "englishName": "Indonesian (Indonesia)",
+    "bcp47": "id-ID",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Google Bahasa Indonesia", "Microsoft Gadis", "Microsoft Andika", "Damayanti"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "Asisten pembingkaian 100% lokal"
+  },
+  "status": {
+    "ready": "Audivise siap. Tekan tombol Mulai Asisten untuk memulai.",
+    "engineLoading": "Memuat mesin lokal…",
+    "engineReady": "Mesin Rust/WebAssembly siap (versi {version}). Tanpa internet. Tanpa cloud. Tidak ada yang keluar dari perangkat ini.",
+    "engineError": "Gagal memuat mesin lokal: {error}",
+    "deviceMobile": "Terdeteksi: ponsel",
+    "deviceDesktop": "Terdeteksi: komputer (webcam)",
+    "cameraFrontMode": "Mode saat ini: kamera depan",
+    "cameraBackMode": "Mode saat ini: kamera belakang atau kamera laptop"
+  },
+  "buttons": {
+    "start": "Mulai Asisten",
+    "stop": "Hentikan Asisten",
+    "repeat": "Ulangi Panduan Terakhir",
+    "cameraFront": "Ganti Kamera: Depan",
+    "cameraBack": "Ganti Kamera: Belakang",
+    "about": "Tentang Audivise",
+    "settings": "Bahasa dan Suara",
+    "close": "Tutup",
+    "ok": "Mengerti"
+  },
+  "aria": {
+    "start": "Memulai atau menghentikan asisten pembingkaian",
+    "repeat": "Mengulangi panduan suara terakhir",
+    "camera": "Beralih antara kamera depan dan kamera belakang",
+    "about": "Mendengarkan informasi tentang proyek Audivise",
+    "settings": "Membuka pengaturan bahasa dan suara",
+    "closeSettings": "Menutup pengaturan",
+    "interfaceLanguage": "Memilih bahasa antarmuka",
+    "voiceLanguage": "Memilih bahasa suara",
+    "voiceSelect": "Memilih suara yang terpasang untuk bahasa yang dipilih",
+    "rate": "Mengatur kecepatan bicara",
+    "status": "Status asisten"
+  },
+  "fileProtocol": {
+    "warning": "Anda membuka index.html langsung dari disk. Karena aturan keamanan peramban, kamera dan mesin memerlukan server lokal: tutup tab ini dan mulailah melalui berkas peluncur sistem Anda — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux) atau iniciar-audivise-android.sh (Android, melalui Termux).",
+    "blocked": "Aplikasi ini harus dibuka melalui peluncur lokal. Tutup tab ini dan klik dua kali peluncur sistem Anda (INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "Kamera aktif. Menganalisis wajah Anda.",
+    "cameraError": "Gagal mengakses kamera. Periksa izin peramban.",
+    "stopped": "Asisten dihentikan.",
+    "noFace": "Saya tidak menemukan wajah Anda. Pastikan kamera aktif dan tidak terhalang.",
+    "nothingToRepeat": "Belum ada panduan untuk diulang.",
+    "engineLoading": "Mesin masih dimuat. Coba lagi sebentar lagi.",
+    "cameraRestartError": "Saya tidak dapat memulai ulang kamera.",
+    "frontSelected": "Kamera depan dipilih.",
+    "backSelected": "Kamera belakang dipilih."
+  },
+  "issues": {
+    "MOVE_RIGHT": "geser ponsel ke kanan",
+    "MOVE_LEFT": "geser ponsel ke kiri",
+    "LOWER_CAMERA": "turunkan kamera sedikit",
+    "RAISE_CAMERA": "angkat kamera sedikit",
+    "MOVE_CLOSER": "dekatkan wajah Anda ke kamera",
+    "MOVE_AWAY": "jauhkan wajah Anda dari kamera"
+  },
+  "verdict": {
+    "perfect": "Pembingkaian sempurna! Anda bisa mulai merekam."
+  },
+  "about": {
+    "narrative": "Audivise, versi 1, edisi lokal dan privat. Sistem ini dirancang oleh Eliezer Tavares de Oliveira. Ini adalah kelanjutan dari pekerjaan yang dimulai dalam Projeto Integrador V (Proyek Integratif V), program studi Teknik Komputer di UNIVESP. Kini menjadi proyek pribadi, bukan akademik. Edisi ini berjalan sepenuhnya di perangkat Anda: mesin pengambil keputusan ditulis dalam Rust, dikompilasi ke WebAssembly, dan deteksi wajah dilakukan secara lokal. Tidak ada gambar, koordinat, atau kata yang keluar dari mesin Anda."
+  },
+  "settings": {
+    "title": "Bahasa dan suara",
+    "interfaceLanguage": "Bahasa antarmuka",
+    "voiceLanguage": "Bahasa suara",
+    "voice": "Suara terpasang",
+    "voiceSystemDefault": "Suara bawaan sistem untuk bahasa ini",
+    "voiceNone": "Tidak ada suara terpasang untuk bahasa ini",
+    "speechRate": "Kecepatan bicara",
+    "saved": "Preferensi tersimpan.",
+    "testVoice": "Uji suara"
+  },
+  "voiceInstall": {
+    "title": "Suara tidak ditemukan di sistem ini",
+    "intro": "Belum ada suara terpasang untuk {language}. Untuk mendengarkan panduan dalam bahasa ini, pasang suara sistem — hanya perlu dilakukan sekali:",
+    "windows": "Windows: Pengaturan → Waktu & Bahasa → Ucapan → Kelola suara → Tambahkan suara → pilih {language}.",
+    "macos": "macOS: Pengaturan Sistem → Aksesibilitas → Konten yang Diucapkan → Suara Sistem → Kelola Suara → unduh suara untuk {language}.",
+    "android": "Android: Pengaturan → Sistem → Bahasa & masukan → Output text-to-speech → Google Text-to-Speech → Instal data suara → {language}.",
+    "ios": "iPhone/iPad: Pengaturan → Aksesibilitas → Konten yang Diucapkan → Suara → tambahkan suara untuk {language}.",
+    "linux": "Linux: pasang speech-dispatcher dengan suara untuk {language} (misalnya espeak-ng atau RHVoice), atau gunakan Google Chrome yang sudah menyertakan suaranya sendiri.",
+    "chrome": "Chrome: suara Google biasanya sudah tersedia; pastikan peramban diperbarui, lalu ketuk Periksa lagi.",
+    "recheck": "Periksa lagi",
+    "once": "Pemberitahuan ini hanya muncul sekali per bahasa. Audivise tetap berfungsi tanpa suara: semua panduan juga ditampilkan sebagai teks."
+  },
+  "footer": {
+    "architect": "Dirancang oleh Eliezer Tavares de Oliveira.",
+    "history": "Kelanjutan dari pekerjaan yang dimulai dalam Projeto Integrador V (Proyek Integratif V) pada program studi Teknik Komputer UNIVESP — kini menjadi proyek pribadi dan non-akademik. Seluruh pemrosesan terjadi di perangkat ini, tanpa cloud."
+  }
+}

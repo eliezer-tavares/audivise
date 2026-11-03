@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "עברית (ישראל)",
+    "englishName": "Hebrew (Israel)",
+    "bcp47": "he-IL",
+    "dir": "rtl",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Microsoft Carmit", "Microsoft Asaf", "Google עברית", "Carmit", "eSpeak עברית"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "עוזר מסגור 100% מקומי"
+  },
+  "status": {
+    "ready": "Audivise מוכן. לחצו על כפתור “הפעלת העוזר” כדי להתחיל.",
+    "engineLoading": "טוען את המנוע המקומי…",
+    "engineReady": "מנוע Rust/WebAssembly מוכן (גרסה {version}). אפס אינטרנט. אפס ענן. שום דבר לא יוצא מהמכשיר הזה.",
+    "engineError": "טעינת המנוע המקומי נכשלה: {error}",
+    "deviceMobile": "זוהה: טלפון נייד",
+    "deviceDesktop": "זוהה: מחשב (מצלמת רשת)",
+    "cameraFrontMode": "מצב נוכחי: מצלמה קדמית",
+    "cameraBackMode": "מצב נוכחי: מצלמה אחורית או מצלמת מחשב נייד"
+  },
+  "buttons": {
+    "start": "הפעלת העוזר",
+    "stop": "עצירת העוזר",
+    "repeat": "חזרה על ההנחיה האחרונה",
+    "cameraFront": "החלפת מצלמה: קדמית",
+    "cameraBack": "החלפת מצלמה: אחורית",
+    "about": "על Audivise",
+    "settings": "שפה וקול",
+    "close": "סגירה",
+    "ok": "הבנתי"
+  },
+  "aria": {
+    "start": "הפעלה או עצירה של עוזר המסגור",
+    "repeat": "חזרה על ההנחיה המדוברת האחרונה",
+    "camera": "מעבר בין מצלמה קדמית למצלמה אחורית",
+    "about": "האזנה למידע על פרויקט Audivise",
+    "settings": "פתיחת הגדרות שפה וקול",
+    "closeSettings": "סגירת ההגדרות",
+    "interfaceLanguage": "בחירת שפת הממשק",
+    "voiceLanguage": "בחירת שפת הקול",
+    "voiceSelect": "בחירת קול מותקן עבור השפה שנבחרה",
+    "rate": "התאמת מהירות הדיבור",
+    "status": "מצב העוזר"
+  },
+  "fileProtocol": {
+    "warning": "פתחתם את index.html ישירות מהכונן. מסיבות אבטחה של הדפדפן, המצלמה והמנוע זקוקים לשרת מקומי: סגרו את הכרטיסייה והפעילו דרך משגר המתאים למערכת שלכם — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux) או iniciar-audivise-android.sh (Android, דרך Termux).",
+    "blocked": "יש לפתוח את היישום דרך משגר מקומי. סגרו את הכרטיסייה ולחצו לחיצה כפולה על משגר המערכת שלכם (INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "המצלמה פעילה. מנתח את הפנים שלכם.",
+    "cameraError": "שגיאה בגישה למצלמה. בדקו את הרשאת הדפדפן.",
+    "stopped": "העוזר נעצר.",
+    "noFace": "לא מצאתי את הפנים שלכם. בדקו שהמצלמה דלוקה ולא חסומה.",
+    "nothingToRepeat": "אין עדיין הנחיות לחזור עליהן.",
+    "engineLoading": "המנוע עדיין נטען. נסו שוב בעוד רגע.",
+    "cameraRestartError": "לא הצלחתי להפעיל מחדש את המצלמה.",
+    "frontSelected": "המצלמה הקדמית נבחרה.",
+    "backSelected": "המצלמה האחורית נבחרה."
+  },
+  "issues": {
+    "MOVE_RIGHT": "הזיזו את הטלפון ימינה",
+    "MOVE_LEFT": "הזיזו את הטלפון שמאלה",
+    "LOWER_CAMERA": "הורידו מעט את המצלמה",
+    "RAISE_CAMERA": "הרימו מעט את המצלמה",
+    "MOVE_CLOSER": "קרבו את הפנים אל המצלמה",
+    "MOVE_AWAY": "הרחיקו את הפנים מהמצלמה"
+  },
+  "verdict": {
+    "perfect": "מסגור מושלם! אפשר להתחיל להקליט."
+  },
+  "about": {
+    "narrative": "Audivise, גרסה 1, מהדורה מקומית ופרטית. המערכת תוכננה על ידי Eliezer Tavares de Oliveira. זהו המשך העבודה שהחלה בפרויקט Projeto Integrador V (פרויקט שילובי V, PI-V) בלימודי הנדסת מחשבים ב-UNIVESP. כיום זהו פרויקט אישי שאינו אקדמי. המהדורה הזו פועלת כולה במכשיר שלכם: מנוע קבלת ההחלטות כתוב ב-Rust ומהודר ל-WebAssembly, וזיהוי הפנים מתבצע מקומית. שום תמונה, קואורדינטה או מילה לא יוצאים מהמחשב שלכם."
+  },
+  "settings": {
+    "title": "שפה וקול",
+    "interfaceLanguage": "שפת הממשק",
+    "voiceLanguage": "שפת הקול",
+    "voice": "קול מותקן",
+    "voiceSystemDefault": "קול ברירת המחדל של המערכת עבור שפה זו",
+    "voiceNone": "אין קול מותקן עבור שפה זו",
+    "speechRate": "מהירות הדיבור",
+    "saved": "ההעדפות נשמרו.",
+    "testVoice": "בדיקת הקול"
+  },
+  "voiceInstall": {
+    "title": "לא נמצא קול במערכת זו",
+    "intro": "אין קול מותקן עבור {language}. כדי לשמוע את ההנחיות בשפה זו, התקינו קול מערכת — יש לעשות זאת פעם אחת בלבד:",
+    "windows": "Windows: הגדרות ← שעה ושפה ← דיבור ← ניהול קולות ← הוספת קולות ← בחרו {language}.",
+    "macos": "macOS: הגדרות מערכת ← נגישות ← תוכן מדובר ← קול המערכת ← ניהול קולות ← הורידו קול עבור {language}.",
+    "android": "Android: הגדרות ← מערכת ← שפות וקלט ← פלט המרת טקסט לדיבור ← Google Text-to-Speech ← התקנת נתוני קול ← {language}.",
+    "ios": "iPhone/iPad: הגדרות ← נגישות ← תוכן מדובר ← קולות ← הוסיפו קול עבור {language}.",
+    "linux": "Linux: התקינו את speech-dispatcher עם קול עבור {language} (למשל espeak-ng או RHVoice), או השתמשו ב-Google Chrome, שכולל קולות משלו.",
+    "chrome": "Chrome: הקולות של Google בדרך כלל כלולים מראש; ודאו שהדפדפן מעודכן והקישו על בדיקה מחדש.",
+    "recheck": "בדיקה מחדש",
+    "once": "ההודעה הזו מופיעה פעם אחת בלבד לכל שפה. Audivise עובד גם בלי קול: כל הנחיה מוצגת גם כטקסט."
+  },
+  "footer": {
+    "architect": "אדריכל המערכת: Eliezer Tavares de Oliveira.",
+    "history": "המשך העבודה שהחלה בפרויקט Projeto Integrador V (PI-V) בלימודי הנדסת מחשבים ב-UNIVESP — כיום פרויקט אישי שאינו אקדמי. כל העיבוד מתרחש במכשיר הזה, בלי ענן."
+  }
+}

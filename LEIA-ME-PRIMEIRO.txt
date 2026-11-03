@@ -1,0 +1,110 @@
+===========================================================================
+AUDIVISE 1.0 — LEIA-ME PRIMEIRO
+Copyright (C) 2026 Eliezer Tavares de Oliveira
+Arquitetado por Eliezer Tavares de Oliveira.
+Continuação do Projeto Integrador V - Engenharia de Computação (UNIVESP).
+Projeto pessoal e não acadêmico. Licença: GNU GPLv3.
+===========================================================================
+
+OLÁ! Este é o Audivise: um assistente que fala com você para deixar seu
+rosto bem enquadrado na câmera, durante videoconferências ou gravações.
+
+Ele avisa quando você está longe demais, perto demais, muito para um lado
+ou para o outro — e comemora com você: "Enquadramento perfeito! Pode
+gravar."
+
+IMPORTANTE: o autor deste projeto é deficiente visual total. O Audivise
+foi feito para ser usado por ouvidos, não por olhos. Tudo o que aparece na
+tela também é falado em voz alta.
+
+---------------------------------------------------------------------------
+COMO COMEÇAR (COMPUTADOR) — 3 PASSOS
+---------------------------------------------------------------------------
+
+PASSO 1. Encontre o iniciador do seu sistema, dentro da pasta do Audivise:
+
+   - Windows : INICIAR-AUDIVISE.bat        (duplo clique)
+   - macOS   : iniciar-audivise-mac.command (duplo clique)
+   - Linux   : iniciar-audivise-linux.sh    (bash iniciar-audivise-linux.sh)
+
+PASSO 2. Uma janela preta do servidor local vai abrir. DEIXE ELA ABERTA.
+   Ela não é a internet: é só o Audivise conversando com o seu navegador,
+   dentro do seu próprio computador.
+
+PASSO 3. O navegador abre sozinho. Permita o acesso à câmera quando pedir
+   e pressione o botão "Iniciar Assistente". Pronto: escute as orientações
+   e posicione-se até ouvir o enquadramento perfeito.
+
+Pré-requisito: Python 3 ou Node.js instalado (qualquer um dos dois). Se
+nenhum dos dois existir, o iniciador mostra na tela como instalar — é
+grátis e demora poucos minutos. Nada mais é baixado da internet.
+
+---------------------------------------------------------------------------
+COMO COMEÇAR (ANDROID)
+---------------------------------------------------------------------------
+
+Abra o arquivo INICIAR-NO-ANDROID.txt: ele explica, passo a passo, como
+usar o Audivise no celular pelo Termux e como instalá-lo como aplicativo
+na tela inicial (PWA).
+
+---------------------------------------------------------------------------
+IDIOMAS E VOZES (27 IDIOMAS)
+---------------------------------------------------------------------------
+
+1. Pressione o botão "Idioma e Voz".
+2. Escolha o idioma da INTERFACE (os textos da tela) e o idioma da VOZ
+   (como o Audivise fala com você). Podem ser idiomas diferentes.
+3. Português, inglês, espanhol, francês, italiano, alemão, holandês,
+   polonês, romeno, tcheco, ucraniano, sueco, húngaro, sérvio, suaíli,
+   hebraico, árabe, mandarim, russo, hindi, japonês, coreano, bahasa
+   indonésio, persa, turco, vietnamita e tailandês estão prontos para uso.
+4. Se o seu computador não tiver voz instalada para o idioma da voz
+   escolhido, o Audivise mostra COMO instalar (apenas uma vez). Enquanto
+   isso, tudo continua funcionando por escrito.
+
+---------------------------------------------------------------------------
+BOTÕES PRINCIPAIS
+---------------------------------------------------------------------------
+
+- INICIAR ASSISTENTE: liga a câmera e começa a orientar (pressione de
+  novo para parar).
+- REPETIR ÚLTIMA ORIENTAÇÃO: fala de novo a última mensagem, sem esperar
+  o próximo ciclo de análise.
+- TROCAR CÂMERA: alterna entre câmera frontal e traseira (no notebook, a
+  frontal é a webcam).
+- SOBRE O AUDIVISE: conta a história do projeto em voz alta.
+- IDIOMA E VOZ: escolha de idiomas, voz específica e velocidade da fala.
+
+---------------------------------------------------------------------------
+PRIVACIDADE: NADA SAI DO SEU COMPUTADOR
+---------------------------------------------------------------------------
+
+- A detecção do rosto acontece DENTRO do navegador (MediaPipe embutido).
+- As decisões são calculadas DENTRO do navegador (motor Rust/WebAssembly
+  embutido).
+- Nenhuma imagem, coordenada ou palavra é enviada para a internet.
+- Pode desligar o Wi-Fi: o Audivise funciona do mesmo jeito.
+
+---------------------------------------------------------------------------
+SE ALGO DER ERRADO
+---------------------------------------------------------------------------
+
+- "Não encontrei seu rosto": verifique se a câmera está ligada,
+  desbloqueada e se você está no quadro.
+- Erro ao acessar a câmera: permita o acesso no navegador (cadeado ao
+  lado do endereço).
+- A página abre com um aviso sobre INICIAR-AUDIVISE: você abriu o
+  index.html direto do disco. Feche a aba e use o iniciador do seu
+  sistema.
+- Nenhuma porta disponível: feche outros Audivise abertos e tente de novo.
+
+---------------------------------------------------------------------------
+CRÉDITOS E LICENÇA
+---------------------------------------------------------------------------
+
+Audivise — arquitetado por Eliezer Tavares de Oliveira.
+Continuação do Projeto Integrador V (PI-V), curso de Engenharia de
+Computação da UNIVESP — hoje, um projeto pessoal e não acadêmico.
+E-mail: contact@eliezertavaresdeoliveira.com
+ORCID: 0009-0007-2577-8635
+Licença: GNU General Public License v3.0 (arquivo LICENSE).

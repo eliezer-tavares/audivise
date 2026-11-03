@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "Magyar (Magyarország)",
+    "englishName": "Hungarian (Hungary)",
+    "bcp47": "hu-HU",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Microsoft Noemi", "Microsoft Szabolcs", "Google magyar", "Mariska", "eSpeak magyar"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "100%-ban helyi keretezési asszisztens"
+  },
+  "status": {
+    "ready": "Az Audivise készen áll. Nyomja meg az Asszisztens indítása gombot a kezdéshez.",
+    "engineLoading": "Helyi motor betöltése…",
+    "engineReady": "A Rust/WebAssembly-motor készen áll (verzió {version}). Nincs internet. Nincs felhő. Semmi nem hagyja el ezt az eszközt.",
+    "engineError": "A helyi motor betöltése sikertelen: {error}",
+    "deviceMobile": "Észlelve: mobiltelefon",
+    "deviceDesktop": "Észlelve: számítógép (webkamera)",
+    "cameraFrontMode": "Aktuális mód: elülső kamera",
+    "cameraBackMode": "Aktuális mód: hátsó kamera vagy a notebook kamerája"
+  },
+  "buttons": {
+    "start": "Asszisztens indítása",
+    "stop": "Asszisztens leállítása",
+    "repeat": "Utolsó útmutatás megismétlése",
+    "cameraFront": "Kameraváltás: elülső",
+    "cameraBack": "Kameraváltás: hátsó",
+    "about": "Az Audivise névjegye",
+    "settings": "Nyelv és hang",
+    "close": "Bezárás",
+    "ok": "Értem"
+  },
+  "aria": {
+    "start": "A keretezési asszisztens indítása vagy leállítása",
+    "repeat": "Az utolsó kimondott útmutatás megismétlése",
+    "camera": "Váltás az elülső és a hátsó kamera között",
+    "about": "Információk hallgatása az Audivise projektről",
+    "settings": "Nyelvi és hangbeállítások megnyitása",
+    "closeSettings": "Beállítások bezárása",
+    "interfaceLanguage": "A felület nyelvének kiválasztása",
+    "voiceLanguage": "A hang nyelvének kiválasztása",
+    "voiceSelect": "Telepített hang kiválasztása a kiválasztott nyelvhez",
+    "rate": "A beszédsebesség beállítása",
+    "status": "Az asszisztens állapota"
+  },
+  "fileProtocol": {
+    "warning": "Az index.html fájlt közvetlenül a lemezről nyitotta meg. A böngésző biztonsági szabályai miatt a kamera és a motor helyi szervert igényel: zárja be ezt a lapot, és indítsa el a rendszerének megfelelő indítófájllal — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux) vagy iniciar-audivise-android.sh (Android, Termux alatt).",
+    "blocked": "Az alkalmazás csak a helyi indítón keresztül nyitható meg. Zárja be ezt a lapot, és kattintson duplán a rendszerének megfelelő indítóra (INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "Kamera bekapcsolva. Elemzem az arcát.",
+    "cameraError": "Hiba történt a kamera elérésekor. Ellenőrizze a böngésző engedélyét.",
+    "stopped": "Asszisztens leállítva.",
+    "noFace": "Nem találtam meg az arcát. Ellenőrizze, hogy a kamera be van-e kapcsolva és nincs-e letiltva.",
+    "nothingToRepeat": "Még nincs megismételhető útmutatás.",
+    "engineLoading": "A motor még töltődik. Próbálja újra egy pillanat múlva.",
+    "cameraRestartError": "Nem sikerült újraindítani a kamerát.",
+    "frontSelected": "Elülső kamera kiválasztva.",
+    "backSelected": "Hátsó kamera kiválasztva."
+  },
+  "issues": {
+    "MOVE_RIGHT": "mozgassa a telefont jobbra",
+    "MOVE_LEFT": "mozgassa a telefont balra",
+    "LOWER_CAMERA": "engedje kicsit lejjebb a kamerát",
+    "RAISE_CAMERA": "emelje kicsit feljebb a kamerát",
+    "MOVE_CLOSER": "mozgassa közelebb az arcát a kamerához",
+    "MOVE_AWAY": "mozgassa távolabb az arcát a kamerától"
+  },
+  "verdict": {
+    "perfect": "Tökéletes keretezés! Kezdheti a felvételt."
+  },
+  "about": {
+    "narrative": "Audivise, 1-es verzió, helyi és privát kiadás. A rendszer architektúráját Eliezer Tavares de Oliveira tervezte. Ez a Projeto Integrador V (integráló projekt, PI-V) keretében elkezdett munka folytatása, amely a UNIVESP mérnökinformatikus képzésén indult. Ma már személyes, nem akadémiai projekt. Ez a kiadás teljes egészében az Ön eszközén fut: a döntési motor Rust nyelven íródott, WebAssembly-re lefordítva, az arcfelismerés pedig helyben történik. Semmilyen kép, koordináta vagy szó nem hagyja el ezt a gépet."
+  },
+  "settings": {
+    "title": "Nyelv és hang",
+    "interfaceLanguage": "A felület nyelve",
+    "voiceLanguage": "A hang nyelve",
+    "voice": "Telepített hang",
+    "voiceSystemDefault": "A rendszer alapértelmezett hangja ehhez a nyelvhez",
+    "voiceNone": "Nincs hang telepítve ehhez a nyelvhez",
+    "speechRate": "Beszédsebesség",
+    "saved": "Beállítások mentve.",
+    "testVoice": "Hang kipróbálása"
+  },
+  "voiceInstall": {
+    "title": "Ezen a rendszeren nem található hang",
+    "intro": "Nincs telepített hang a következő nyelvhez: {language}. Ha ezen a nyelven szeretné hallani az útmutatásokat, telepítsen egy rendszerhangot — ezt csak egyszer kell megtennie:",
+    "windows": "Windows: Beállítások → Idő és nyelv → Beszéd → Hangok kezelése → Hangok hozzáadása → válassza a {language} nyelvet.",
+    "macos": "macOS: Rendszerbeállítások → Akadálymentesítés → Kimondott tartalom → Rendszerhang → Hangok kezelése → töltsön le egy {language} nyelvű hangot.",
+    "android": "Android: Beállítások → Rendszer → Nyelvek és bevitel → Kimenet → Szövegfelolvasás → Google Text-to-Speech → Hangadatok telepítése → {language}.",
+    "ios": "iPhone/iPad: Beállítások → Akadálymentesítés → Kimondott tartalom → Hangok → adjon hozzá egy {language} nyelvű hangot.",
+    "linux": "Linux: telepítse a speech-dispatchert {language} nyelvű hanggal (például espeak-ng vagy RHVoice), vagy használja a Google Chrome böngészőt, amely saját hangokat is tartalmaz.",
+    "chrome": "Chrome: a Google hangjai általában készen elérhetők; győződjön meg róla, hogy a böngésző naprakész, majd koppintson az Újraellenőrzés gombra.",
+    "recheck": "Újraellenőrzés",
+    "once": "Ez az értesítés nyelvenként csak egyszer jelenik meg. Az Audivise hang nélkül is működik: minden útmutatás írásban is megjelenik."
+  },
+  "footer": {
+    "architect": "A rendszer architektúráját tervezte: Eliezer Tavares de Oliveira.",
+    "history": "A munka a UNIVESP mérnökinformatikus képzésének Projeto Integrador V (PI-V) projektjében indult, ennek folytatása — ma már személyes, nem akadémiai projekt. Minden feldolgozás ezen a készüléken történik, felhő nélkül."
+  }
+}

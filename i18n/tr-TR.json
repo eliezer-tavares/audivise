@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "Türkçe (Türkiye)",
+    "englishName": "Turkish (Türkiye)",
+    "bcp47": "tr-TR",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Microsoft Tolga", "Microsoft Emel", "Microsoft Ahmet", "Google Türkçe", "Yelda"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "%100 yerel çerçeveleme asistanı"
+  },
+  "status": {
+    "ready": "Audivise hazır. Başlamak için Asistanı Başlat düğmesine basın.",
+    "engineLoading": "Yerel motor yükleniyor…",
+    "engineReady": "Rust/WebAssembly motoru hazır (sürüm {version}). İnternet yok. Bulut yok. Hiçbir şey bu cihazdan dışarı çıkmıyor.",
+    "engineError": "Yerel motor yüklenemedi: {error}",
+    "deviceMobile": "Algılandı: cep telefonu",
+    "deviceDesktop": "Algılandı: bilgisayar (web kamerası)",
+    "cameraFrontMode": "Geçerli mod: ön kamera",
+    "cameraBackMode": "Geçerli mod: arka kamera veya dizüstü kamerası"
+  },
+  "buttons": {
+    "start": "Asistanı Başlat",
+    "stop": "Asistanı Durdur",
+    "repeat": "Son Yönlendirmeyi Yinele",
+    "cameraFront": "Kamerayı Değiştir: Ön",
+    "cameraBack": "Kamerayı Değiştir: Arka",
+    "about": "Audivise Hakkında",
+    "settings": "Dil ve Ses",
+    "close": "Kapat",
+    "ok": "Anladım"
+  },
+  "aria": {
+    "start": "Çerçeveleme asistanını başlat veya durdur",
+    "repeat": "Son sözlü yönlendirmeyi yinele",
+    "camera": "Ön kamera ile arka kamera arasında geçiş yap",
+    "about": "Audivise projesi hakkında bilgiyi dinle",
+    "settings": "Dil ve ses ayarlarını aç",
+    "closeSettings": "Ayarları kapat",
+    "interfaceLanguage": "Arayüz dilini seç",
+    "voiceLanguage": "Ses dilini seç",
+    "voiceSelect": "Seçilen dil için kurulu bir ses seç",
+    "rate": "Konuşma hızını ayarla",
+    "status": "Asistanın durumu"
+  },
+  "fileProtocol": {
+    "warning": "index.html dosyasını doğrudan diskten açtınız. Tarayıcı güvenlik kuralları gereği kamera ve motorun yerel bir sunucuya ihtiyacı var: bu sekmeyi kapatın ve uygulamayı sisteminizin başlatıcısıyla başlatın — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux) veya iniciar-audivise-android.sh (Android, Termux üzerinden).",
+    "blocked": "Bu uygulama yerel başlatıcıyla açılmalıdır. Bu sekmeyi kapatın ve sisteminizin başlatıcısına (INICIAR-AUDIVISE) çift tıklayın."
+  },
+  "speech": {
+    "cameraOn": "Kamera açıldı. Yüzünüz analiz ediliyor.",
+    "cameraError": "Kameraya erişilirken hata oluştu. Tarayıcı iznini kontrol edin.",
+    "stopped": "Asistan durduruldu.",
+    "noFace": "Yüzünüzü bulamadım. Kameranın açık ve engellenmemiş olduğundan emin olun.",
+    "nothingToRepeat": "Yinelenecek bir yönlendirme henüz yok.",
+    "engineLoading": "Motor hâlâ yükleniyor. Birazdan yeniden deneyin.",
+    "cameraRestartError": "Kamerayı yeniden başlatamadım.",
+    "frontSelected": "Ön kamera seçildi.",
+    "backSelected": "Arka kamera seçildi."
+  },
+  "issues": {
+    "MOVE_RIGHT": "telefonu sağa doğru kaydırın",
+    "MOVE_LEFT": "telefonu sola doğru kaydırın",
+    "LOWER_CAMERA": "kamerayı biraz aşağı indirin",
+    "RAISE_CAMERA": "kamerayı biraz yukarı kaldırın",
+    "MOVE_CLOSER": "yüzünüzü kameraya yaklaştırın",
+    "MOVE_AWAY": "yüzünüzü kameradan uzaklaştırın"
+  },
+  "verdict": {
+    "perfect": "Kadraj mükemmel! Kayda başlayabilirsiniz."
+  },
+  "about": {
+    "narrative": "Audivise, sürüm 1, yerel ve gizlilik odaklı sürüm. Sistemin mimarisini Eliezer Tavares de Oliveira tasarladı. Bu çalışma, UNIVESP Bilgisayar Mühendisliği bölümünde başlatılan Projeto Integrador V (Bütünleştirik Proje V) çalışmasının devamıdır. Artık kişisel, akademik olmayan bir projedir. Bu sürüm tamamen cihazınızda çalışır: karar motoru Rust ile yazıldı ve WebAssembly olarak derlendi, yüz algılama yereldir. Hiçbir görüntü, koordinat veya kelime makinenizden çıkmaz."
+  },
+  "settings": {
+    "title": "Dil ve ses",
+    "interfaceLanguage": "Arayüz dili",
+    "voiceLanguage": "Ses dili",
+    "voice": "Kurulu ses",
+    "voiceSystemDefault": "Bu dil için varsayılan sistem sesi",
+    "voiceNone": "Bu dil için kurulu ses yok",
+    "speechRate": "Konuşma hızı",
+    "saved": "Tercihler kaydedildi.",
+    "testVoice": "Sesi test et"
+  },
+  "voiceInstall": {
+    "title": "Bu sistemde ses bulunamadı",
+    "intro": "{language} için kurulu bir ses yok. Yönlendirmeleri bu dilde duymak için bir sistem sesi kurun — bunu yalnızca bir kez yapmanız gerekiyor:",
+    "windows": "Windows: Ayarlar → Saat ve Dil → Konuşma → Sesleri yönet → Ses ekle → {language} seçin.",
+    "macos": "macOS: Sistem Ayarları → Erişilebilirlik → Konuşulan İçerik → Sistem Sesi → Sesleri Yönet → bir {language} sesi indirin.",
+    "android": "Android: Ayarlar → Sistem → Diller ve giriş → Çıkış → Metin konuşmaya dönüştürme → Google Text-to-Speech → Ses verilerini yükle → {language}.",
+    "ios": "iPhone/iPad: Ayarlar → Erişilebilirlik → Konuşulan İçerik → Sesler → {language} için bir ses ekleyin.",
+    "linux": "Linux: {language} için bir sesle birlikte speech-dispatcher kurun (örneğin espeak-ng veya RHVoice) ya da kendi sesleriyle gelen Google Chrome'u kullanın.",
+    "chrome": "Chrome: Google sesleri genellikle hazır gelir; tarayıcının güncel olduğundan emin olun ve Yeniden denetle'ye dokunun.",
+    "recheck": "Yeniden denetle",
+    "once": "Bu bildirim her dil için yalnızca bir kez görünür. Audivise ses olmadan da çalışır: tüm yönlendirmeler ayrıca yazılı olarak gösterilir."
+  },
+  "footer": {
+    "architect": "Mimari ve tasarım: Eliezer Tavares de Oliveira.",
+    "history": "UNIVESP Bilgisayar Mühendisliği bölümünde yürütülen Projeto Integrador V (Bütünleştirik Proje V) çalışmasının devamı — bugün kişisel, akademik olmayan bir proje. Tüm işlemler bu cihazda gerçekleşir; bulut yok."
+  }
+}

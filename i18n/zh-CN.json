@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "中文（中国大陆）",
+    "englishName": "Chinese (Mandarin, Mainland)",
+    "bcp47": "zh-CN",
+    "dir": "ltr",
+    "sentenceSeparator": "。",
+    "voiceHints": ["Microsoft Huihui", "Microsoft Kangkang", "Microsoft Yaoyao", "Google 普通话（中国大陆）", "Ting-Ting", "Tingting"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "100% 本地运行的取景助手"
+  },
+  "status": {
+    "ready": "Audivise 已就绪。请按“启动助手”按钮开始。",
+    "engineLoading": "正在加载本地引擎…",
+    "engineReady": "Rust/WebAssembly 引擎已就绪（版本 {version}）。无需联网。没有云端。任何数据都不会离开这台设备。",
+    "engineError": "本地引擎加载失败：{error}",
+    "deviceMobile": "已检测到：手机",
+    "deviceDesktop": "已检测到：电脑（网络摄像头）",
+    "cameraFrontMode": "当前模式：前置摄像头",
+    "cameraBackMode": "当前模式：后置摄像头或笔记本摄像头"
+  },
+  "buttons": {
+    "start": "启动助手",
+    "stop": "停止助手",
+    "repeat": "重复上一条指导",
+    "cameraFront": "切换摄像头：前置",
+    "cameraBack": "切换摄像头：后置",
+    "about": "关于 Audivise",
+    "settings": "语言与语音",
+    "close": "关闭",
+    "ok": "知道了"
+  },
+  "aria": {
+    "start": "启动或停止取景助手",
+    "repeat": "重复上一条语音指导",
+    "camera": "在前置摄像头和后置摄像头之间切换",
+    "about": "收听关于 Audivise 项目的信息",
+    "settings": "打开语言与语音设置",
+    "closeSettings": "关闭设置",
+    "interfaceLanguage": "选择界面语言",
+    "voiceLanguage": "选择语音语言",
+    "voiceSelect": "为所选语言选择已安装的语音",
+    "rate": "调整语速",
+    "status": "助手状态"
+  },
+  "fileProtocol": {
+    "warning": "您直接从磁盘打开了 index.html。根据浏览器安全规则，摄像头和引擎需要本地服务器：请关闭此标签页，并使用您系统的启动文件启动 — INICIAR-AUDIVISE.bat（Windows）、iniciar-audivise-mac.command（macOS）、iniciar-audivise-linux.sh（Linux）或 iniciar-audivise-android.sh（Android，通过 Termux）。",
+    "blocked": "本应用必须通过本地启动器打开。请关闭此标签页，并双击您系统的启动器（INICIAR-AUDIVISE）。"
+  },
+  "speech": {
+    "cameraOn": "摄像头已开启。正在分析您的面部。",
+    "cameraError": "访问摄像头时出错。请检查浏览器权限。",
+    "stopped": "助手已停止。",
+    "noFace": "我没有找到您的脸。请确认摄像头已开启且未被遮挡。",
+    "nothingToRepeat": "暂时没有可重复的指导。",
+    "engineLoading": "引擎仍在加载。请稍后再试。",
+    "cameraRestartError": "无法重新启动摄像头。",
+    "frontSelected": "已选择前置摄像头。",
+    "backSelected": "已选择后置摄像头。"
+  },
+  "issues": {
+    "MOVE_RIGHT": "请把手机向右移。",
+    "MOVE_LEFT": "请把手机向左移。",
+    "LOWER_CAMERA": "请把摄像头稍微放低。",
+    "RAISE_CAMERA": "请把摄像头稍微抬高。",
+    "MOVE_CLOSER": "请把脸靠近摄像头。",
+    "MOVE_AWAY": "请让脸离摄像头远一点。"
+  },
+  "verdict": {
+    "perfect": "取景完美！可以开始录制了。"
+  },
+  "about": {
+    "narrative": "Audivise，版本 1，本地隐私版。系统由 Eliezer Tavares de Oliveira 架构设计。本项目是 UNIVESP 计算机工程专业“综合项目五”（Projeto Integrador V）所开创工作的延续，如今是一个个人非学术项目。本版本完全在您的设备上运行：决策引擎采用 Rust 编写并编译为 WebAssembly，人脸检测在本地完成。任何图像、坐标或文字都不会离开您的电脑。"
+  },
+  "settings": {
+    "title": "语言与语音",
+    "interfaceLanguage": "界面语言",
+    "voiceLanguage": "语音语言",
+    "voice": "已安装的语音",
+    "voiceSystemDefault": "该语言的系统默认语音",
+    "voiceNone": "该语言没有已安装的语音",
+    "speechRate": "语速",
+    "saved": "偏好设置已保存。",
+    "testVoice": "试听语音"
+  },
+  "voiceInstall": {
+    "title": "此系统上未找到语音",
+    "intro": "没有为 {language} 安装语音。要收听该语言的指导，请安装一条系统语音 — 只需安装一次：",
+    "windows": "Windows：设置 → 时间和语言 → 语音 → 管理语音 → 添加语音 → 选择 {language}。",
+    "macos": "macOS：系统设置 → 辅助功能 → 朗读内容 → 系统声音 → 管理声音 → 下载 {language} 的语音。",
+    "android": "Android：设置 → 系统 → 语言和输入法 → 文字转语音输出 → Google Text-to-Speech → 安装语音数据 → {language}。",
+    "ios": "iPhone/iPad：设置 → 辅助功能 → 朗读内容 → 声音 → 添加 {language} 的语音。",
+    "linux": "Linux：请安装 speech-dispatcher 并为其配置 {language} 的语音（例如 espeak-ng 或 RHVoice），或使用自带语音的 Google Chrome。",
+    "chrome": "Chrome：Google 语音通常已内置；请确认浏览器为最新版本，然后点按“重新检查”。",
+    "recheck": "重新检查",
+    "once": "此提示在每个语言只出现一次。即使没有语音，Audivise 也能正常使用：所有指导都会同时以文字显示。"
+  },
+  "footer": {
+    "architect": "由 Eliezer Tavares de Oliveira 架构设计。",
+    "history": "本项目是 UNIVESP 计算机工程专业“综合项目五”（Projeto Integrador V）所开创工作的延续 — 如今是一个个人非学术项目。所有处理都在这台设备上完成，不使用云端。"
+  }
+}

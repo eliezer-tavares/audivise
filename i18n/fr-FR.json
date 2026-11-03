@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "Français (France)",
+    "englishName": "French (France)",
+    "bcp47": "fr-FR",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Microsoft Hortense", "Microsoft Julie", "Microsoft Denise", "Google français", "Amélie", "Thomas"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "Assistant de cadrage 100 % local"
+  },
+  "status": {
+    "ready": "Audivise est prêt. Appuyez sur le bouton Démarrer l'assistant pour commencer.",
+    "engineLoading": "Chargement du moteur local…",
+    "engineReady": "Moteur Rust/WebAssembly prêt (version {version}). Pas d'Internet. Pas de cloud. Rien ne quitte cet appareil.",
+    "engineError": "Échec du chargement du moteur local : {error}",
+    "deviceMobile": "Détecté : téléphone",
+    "deviceDesktop": "Détecté : ordinateur (webcam)",
+    "cameraFrontMode": "Mode actuel : caméra avant",
+    "cameraBackMode": "Mode actuel : caméra arrière ou caméra du portable"
+  },
+  "buttons": {
+    "start": "Démarrer l'assistant",
+    "stop": "Arrêter l'assistant",
+    "repeat": "Répéter le dernier conseil",
+    "cameraFront": "Changer de caméra : avant",
+    "cameraBack": "Changer de caméra : arrière",
+    "about": "À propos d'Audivise",
+    "settings": "Langue et voix",
+    "close": "Fermer",
+    "ok": "J'ai compris"
+  },
+  "aria": {
+    "start": "Démarrer ou arrêter l'assistant de cadrage",
+    "repeat": "Répéter le dernier conseil énoncé",
+    "camera": "Basculer entre la caméra avant et la caméra arrière",
+    "about": "Écouter les informations sur le projet Audivise",
+    "settings": "Ouvrir les réglages de langue et de voix",
+    "closeSettings": "Fermer les réglages",
+    "interfaceLanguage": "Sélectionner la langue de l'interface",
+    "voiceLanguage": "Sélectionner la langue de la voix",
+    "voiceSelect": "Sélectionner une voix installée pour la langue choisie",
+    "rate": "Régler la vitesse d'élocution",
+    "status": "État de l'assistant"
+  },
+  "fileProtocol": {
+    "warning": "Vous avez ouvert index.html directement depuis le disque. Pour des raisons de sécurité du navigateur, la caméra et le moteur nécessitent un serveur local : fermez cet onglet et lancez l'application avec le fichier de votre système — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux) ou iniciar-audivise-android.sh (Android, via Termux).",
+    "blocked": "Cette application doit être ouverte via le lanceur local. Fermez cet onglet et double-cliquez sur le lanceur de votre système (INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "Caméra activée. Analyse de votre visage en cours.",
+    "cameraError": "Erreur d'accès à la caméra. Vérifiez l'autorisation du navigateur.",
+    "stopped": "Assistant arrêté.",
+    "noFace": "Je n'ai pas trouvé votre visage. Vérifiez que la caméra est allumée et débloquée.",
+    "nothingToRepeat": "Il n'y a pas encore de conseil à répéter.",
+    "engineLoading": "Le moteur est encore en cours de chargement. Réessayez dans un instant.",
+    "cameraRestartError": "Je n'ai pas pu redémarrer la caméra.",
+    "frontSelected": "Caméra avant sélectionnée.",
+    "backSelected": "Caméra arrière sélectionnée."
+  },
+  "issues": {
+    "MOVE_RIGHT": "déplacez le téléphone vers la droite",
+    "MOVE_LEFT": "déplacez le téléphone vers la gauche",
+    "LOWER_CAMERA": "baissez un peu la caméra",
+    "RAISE_CAMERA": "levez un peu la caméra",
+    "MOVE_CLOSER": "rapprochez votre visage de la caméra",
+    "MOVE_AWAY": "éloignez votre visage de la caméra"
+  },
+  "verdict": {
+    "perfect": "Cadrage parfait ! Vous pouvez commencer l'enregistrement."
+  },
+  "about": {
+    "narrative": "Audivise, version 1, édition locale et privée. Système architecturé par Eliezer Tavares de Oliveira. C'est la continuation du travail commencé dans le Projet Intégrateur V (Projeto Integrador V), du cursus d'Ingénierie Informatique de l'Univesp. C'est désormais un projet personnel, non académique. Cette édition fonctionne entièrement sur votre appareil : le moteur de décision est écrit en Rust, compilé en WebAssembly, et la détection de visages est locale. Aucune image, aucune coordonnée, aucun mot ne quitte votre machine."
+  },
+  "settings": {
+    "title": "Langue et voix",
+    "interfaceLanguage": "Langue de l'interface",
+    "voiceLanguage": "Langue de la voix",
+    "voice": "Voix installée",
+    "voiceSystemDefault": "Voix par défaut du système pour cette langue",
+    "voiceNone": "Aucune voix installée pour cette langue",
+    "speechRate": "Vitesse d'élocution",
+    "saved": "Préférences enregistrées.",
+    "testVoice": "Tester la voix"
+  },
+  "voiceInstall": {
+    "title": "Aucune voix trouvée sur ce système",
+    "intro": "Il n'y a aucune voix installée pour {language}. Pour écouter les conseils dans cette langue, installez une voix du système — cela n'est nécessaire qu'une seule fois :",
+    "windows": "Windows : Paramètres → Heure et langue → Voix → Gérer les voix → Ajouter des voix → choisissez {language}.",
+    "macos": "macOS : Réglages Système → Accessibilité → Contenu énoncé → Voix du système → Gérer les voix → téléchargez une voix pour {language}.",
+    "android": "Android : Paramètres → Système → Langues et saisie → Sortie → Synthèse vocale → Google Text-to-Speech → Installer les données de voix → {language}.",
+    "ios": "iPhone/iPad : Réglages → Accessibilité → Contenu énoncé → Voix → ajoutez une voix pour {language}.",
+    "linux": "Linux : installez speech-dispatcher avec une voix pour {language} (par exemple espeak-ng ou RHVoice), ou utilisez Google Chrome, qui intègre ses propres voix.",
+    "chrome": "Chrome : les voix de Google sont généralement intégrées ; vérifiez que le navigateur est à jour et appuyez sur Vérifier à nouveau.",
+    "recheck": "Vérifier à nouveau",
+    "once": "Cet avis n'apparaît qu'une seule fois par langue. Audivise fonctionne même sans voix : tous les conseils sont également affichés à l'écrit."
+  },
+  "footer": {
+    "architect": "Architecturé par Eliezer Tavares de Oliveira.",
+    "history": "Continuation du travail commencé dans le Projet Intégrateur V (Projeto Integrador V) du cursus d'Ingénierie Informatique de l'UNIVESP — aujourd'hui un projet personnel et non académique. Tout le traitement s'effectue sur cet appareil, sans cloud."
+  }
+}

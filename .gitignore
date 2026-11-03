@@ -1,5 +1,33 @@
-/target
-/.vercel
-.env.local
-.env
-Cargo.lock.bak
+# ============================================================
+# AUDIVISE 1.0 — .gitignore
+# Arquitetado por Eliezer Tavares de Oliveira. Licença: GPLv3.
+# ============================================================
+
+# Dependências
+node_modules/
+
+# Artefatos de compilação do motor Rust (engine/pkg É versionado:
+# o pacote local traz o WASM pré-compilado para quem não tem Rust)
+engine/target/
+.lake/
+
+# Testes automatizados (saídas locais)
+test-results/
+playwright-report/
+coverage/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Logs e temporários
+*.log
+tmp/
+.elan/
+elan-init.sh

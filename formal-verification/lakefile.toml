@@ -1,0 +1,17 @@
+name = "audivise-verification"
+version = "1.0.0"
+packagesDir = ".lake/packages"
+defaultTargets = ["logic_proof"]
+
+# A biblioteca aponta para o módulo real `logic_proof.lean`. (Antes da 1.0
+# o nome não batia com o arquivo e `lake build` não compilava nada.)
+[[lean_lib]]
+name = "logic_proof"
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+
+[linter]
+style = true
+unusedVariables = false

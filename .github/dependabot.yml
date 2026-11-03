@@ -1,0 +1,31 @@
+# ===========================================================================
+# COPYRIGHT (C) 2026 ELIEZER TAVARES DE OLIVEIRA
+# PROJECT / PROJETO: AUDIVISE 1.0 — Dependabot
+# CONTEXT / CONTEXTO:
+#   Continuação do Projeto Integrador V - Engenharia de Computação (UNIVESP).
+#   Projeto pessoal e não acadêmico.
+#   Arquitetado por Eliezer Tavares de Oliveira.
+# LICENSE / LICENÇA: GNU General Public License v3.0 (GPLv3)
+# ===========================================================================
+# Atualizações semanais: dependências npm (raiz), GitHub Actions e crates
+# do motor Rust. Agrupamento por ecossistema para não poluir os PRs.
+
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      npm-menor-patch:
+        update-types: ['patch', 'minor']
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: cargo
+    directory: /engine
+    schedule:
+      interval: weekly

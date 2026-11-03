@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "English (United States)",
+    "englishName": "English (United States)",
+    "bcp47": "en-US",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Samantha", "Google US English", "Microsoft Aria", "Microsoft Zira", "Alex", "Karen"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "100% local framing assistant"
+  },
+  "status": {
+    "ready": "Audivise is ready. Press the Start Assistant button to begin.",
+    "engineLoading": "Loading local engine…",
+    "engineReady": "Rust/WebAssembly engine ready (version {version}). No internet. No cloud. Nothing leaves this device.",
+    "engineError": "Failed to load the local engine: {error}",
+    "deviceMobile": "Detected: mobile phone",
+    "deviceDesktop": "Detected: computer (webcam)",
+    "cameraFrontMode": "Current mode: front camera",
+    "cameraBackMode": "Current mode: rear camera or notebook camera"
+  },
+  "buttons": {
+    "start": "Start Assistant",
+    "stop": "Stop Assistant",
+    "repeat": "Repeat Last Guidance",
+    "cameraFront": "Switch Camera: Front",
+    "cameraBack": "Switch Camera: Rear",
+    "about": "About Audivise",
+    "settings": "Language & Voice",
+    "close": "Close",
+    "ok": "Got it"
+  },
+  "aria": {
+    "start": "Start or stop the framing assistant",
+    "repeat": "Repeat the last spoken guidance",
+    "camera": "Switch between front and rear camera",
+    "about": "Listen to information about the Audivise project",
+    "settings": "Open language and voice settings",
+    "closeSettings": "Close the settings",
+    "interfaceLanguage": "Select the interface language",
+    "voiceLanguage": "Select the voice language",
+    "voiceSelect": "Select an installed voice for the chosen language",
+    "rate": "Adjust the speech rate",
+    "status": "Assistant status"
+  },
+  "fileProtocol": {
+    "warning": "You opened index.html straight from disk. For browser security reasons, the camera and the engine need a local server: close this tab and start the app with the launcher for your system — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux), or iniciar-audivise-android.sh (Android, via Termux).",
+    "blocked": "This app must be opened through the local launcher. Close this tab and double-click the launcher for your system (INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "Camera on. Analyzing your face.",
+    "cameraError": "Error accessing the camera. Check the browser permission.",
+    "stopped": "Assistant stopped.",
+    "noFace": "I could not find your face. Check that the camera is on and unblocked.",
+    "nothingToRepeat": "There is no guidance to repeat yet.",
+    "engineLoading": "The engine is still loading. Try again in a moment.",
+    "cameraRestartError": "I could not restart the camera.",
+    "frontSelected": "Front camera selected.",
+    "backSelected": "Rear camera selected."
+  },
+  "issues": {
+    "MOVE_RIGHT": "move the phone to the right",
+    "MOVE_LEFT": "move the phone to the left",
+    "LOWER_CAMERA": "lower the camera a little",
+    "RAISE_CAMERA": "raise the camera a little",
+    "MOVE_CLOSER": "move your face closer to the camera",
+    "MOVE_AWAY": "move your face away from the camera"
+  },
+  "verdict": {
+    "perfect": "Perfect framing! You can start recording."
+  },
+  "about": {
+    "narrative": "Audivise, version 1, local and private edition. System architected by Eliezer Tavares de Oliveira. This is the continuation of the work started in Integrative Project V (Projeto Integrador V), of the Computer Engineering course at UNIVESP. It is now a personal, non-academic project. This edition runs entirely on your device: the decision engine is written in Rust, compiled to WebAssembly, and face detection is local. No image, coordinate or word ever leaves your machine."
+  },
+  "settings": {
+    "title": "Language and voice",
+    "interfaceLanguage": "Interface language",
+    "voiceLanguage": "Voice language",
+    "voice": "Installed voice",
+    "voiceSystemDefault": "System default voice for this language",
+    "voiceNone": "No voice installed for this language",
+    "speechRate": "Speech rate",
+    "saved": "Preferences saved.",
+    "testVoice": "Test voice"
+  },
+  "voiceInstall": {
+    "title": "No voice found on this system",
+    "intro": "There is no installed voice for {language}. To hear the guidance in this language, install a system voice — this needs to be done only once:",
+    "windows": "Windows: Settings → Time & Language → Speech → Manage voices → Add voices → choose {language}.",
+    "macos": "macOS: System Settings → Accessibility → Spoken Content → System Voice → Manage Voices → download a {language} voice.",
+    "android": "Android: Settings → System → Languages & input → Output → Text-to-speech → Google Text-to-Speech → Install voice data → {language}.",
+    "ios": "iPhone/iPad: Settings → Accessibility → Spoken Content → Voices → add a voice for {language}.",
+    "linux": "Linux: install speech-dispatcher with a voice for {language} (for example, espeak-ng or RHVoice), or use Google Chrome, which ships its own voices.",
+    "chrome": "Chrome: Google voices are usually built in; make sure the browser is up to date and tap Check again.",
+    "recheck": "Check again",
+    "once": "This notice appears only once per language. Audivise still works without a voice: every guidance is also shown as text."
+  },
+  "footer": {
+    "architect": "Architected by Eliezer Tavares de Oliveira.",
+    "history": "Continuation of the work started in Integrative Project V (Projeto Integrador V), Computer Engineering, UNIVESP — today a personal, non-academic project. All processing happens on this device, no cloud involved."
+  }
+}

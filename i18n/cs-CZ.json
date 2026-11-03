@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "Čeština (Česko)",
+    "englishName": "Czech (Czech Republic)",
+    "bcp47": "cs-CZ",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Microsoft Zuzana", "Microsoft Jakub", "Google čeština", "Zuzana"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "100 % lokální asistent rámování"
+  },
+  "status": {
+    "ready": "Audivise je připraven. Spusťte asistenta tlačítkem Spustit asistenta.",
+    "engineLoading": "Načítání lokálního motoru…",
+    "engineReady": "Motor Rust/WebAssembly je připraven (verze {version}). Žádný internet. Žádný cloud. Nic neopouští toto zařízení.",
+    "engineError": "Načtení lokálního motoru se nezdařilo: {error}",
+    "deviceMobile": "Zjištěno: mobilní telefon",
+    "deviceDesktop": "Zjištěno: počítač (webová kamera)",
+    "cameraFrontMode": "Aktuální režim: přední kamera",
+    "cameraBackMode": "Aktuální režim: zadní kamera nebo kamera notebooku"
+  },
+  "buttons": {
+    "start": "Spustit asistenta",
+    "stop": "Zastavit asistenta",
+    "repeat": "Zopakovat poslední radu",
+    "cameraFront": "Přepnout kameru: přední",
+    "cameraBack": "Přepnout kameru: zadní",
+    "about": "O aplikaci Audivise",
+    "settings": "Jazyk a hlas",
+    "close": "Zavřít",
+    "ok": "Rozumím"
+  },
+  "aria": {
+    "start": "Spustit nebo zastavit asistenta rámování",
+    "repeat": "Zopakovat poslední vyslovenou radu",
+    "camera": "Přepnout mezi přední a zadní kamerou",
+    "about": "Poslechnout si informace o projektu Audivise",
+    "settings": "Otevřít nastavení jazyka a hlasu",
+    "closeSettings": "Zavřít nastavení",
+    "interfaceLanguage": "Vybrat jazyk rozhraní",
+    "voiceLanguage": "Vybrat jazyk hlasu",
+    "voiceSelect": "Vybrat nainstalovaný hlas pro zvolený jazyk",
+    "rate": "Upravit rychlost řeči",
+    "status": "Stav asistenta"
+  },
+  "fileProtocol": {
+    "warning": "Soubor index.html jste otevřeli přímo z disku. Kvůli bezpečnostním pravidlům prohlížeče potřebují kamera i motor místní server: zavřete tuto kartu a spusťte aplikaci přes spouštěč svého systému — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux) nebo iniciar-audivise-android.sh (Android, přes Termux).",
+    "blocked": "Tuto aplikaci je třeba otevřít pomocí místního spouštěče. Zavřete tuto kartu a dvakrát klikněte na spouštěč svého systému (INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "Kamera je zapnutá. Analyzuji vaši tvář.",
+    "cameraError": "Chyba při přístupu ke kameře. Zkontrolujte oprávnění prohlížeče.",
+    "stopped": "Asistent zastaven.",
+    "noFace": "Nenašel jsem vaši tvář. Zkontrolujte, zda je kamera zapnutá a nezakrytá.",
+    "nothingToRepeat": "Zatím nejsou žádné rady k opakování.",
+    "engineLoading": "Motor se stále načítá. Zkuste to za chvíli znovu.",
+    "cameraRestartError": "Nepodařilo se mi restartovat kameru.",
+    "frontSelected": "Vybrána přední kamera.",
+    "backSelected": "Vybrána zadní kamera."
+  },
+  "issues": {
+    "MOVE_RIGHT": "posuňte telefon doprava",
+    "MOVE_LEFT": "posuňte telefon doleva",
+    "LOWER_CAMERA": "snížte kameru o kousek",
+    "RAISE_CAMERA": "zvedněte kameru o kousek",
+    "MOVE_CLOSER": "přiblížte tvář ke kameře",
+    "MOVE_AWAY": "oddalte tvář od kamery"
+  },
+  "verdict": {
+    "perfect": "Rámování je perfektní! Můžete začít nahrávat."
+  },
+  "about": {
+    "narrative": "Audivise, verze 1, lokální a soukromé vydání. Systém navrhl Eliezer Tavares de Oliveira. Jde o pokračování práce započaté v rámci projektu „Projeto Integrador V“ (integračního projektu V) v oboru Počítačové inženýrství na UNIVESP. Nyní jde o osobní, neakademický projekt. Toto vydání běží zcela na vašem zařízení: rozhodovací motor je napsán v jazyce Rust a zkompilován do WebAssembly a rozpoznávání obličeje probíhá lokálně. Žádný obraz, žádná souřadnice ani žádné slovo neopouští váš počítač."
+  },
+  "settings": {
+    "title": "Jazyk a hlas",
+    "interfaceLanguage": "Jazyk rozhraní",
+    "voiceLanguage": "Jazyk hlasu",
+    "voice": "Nainstalovaný hlas",
+    "voiceSystemDefault": "Výchozí systémový hlas pro tento jazyk",
+    "voiceNone": "Pro tento jazyk není nainstalován žádný hlas",
+    "speechRate": "Rychlost řeči",
+    "saved": "Předvolby byly uloženy.",
+    "testVoice": "Otestovat hlas"
+  },
+  "voiceInstall": {
+    "title": "V tomto systému nebyl nalezen žádný hlas",
+    "intro": "Pro jazyk {language} není nainstalován žádný hlas. Abyste slyšeli rady v tomto jazyce, nainstalujte systémový hlas — je potřeba to udělat jen jednou:",
+    "windows": "Windows: Nastavení → Čas a jazyk → Řeč → Spravovat hlasy → Přidat hlasy → zvolte {language}.",
+    "macos": "macOS: Nastavení systému → Přístupnost → Mluvený obsah → Systémový hlas → Spravovat hlasy → stáhněte si hlas pro {language}.",
+    "android": "Android: Nastavení → Systém → Jazyky a zadávání → Výstup → Syntéza řeči → Google Text-to-Speech → Instalovat hlasová data → {language}.",
+    "ios": "iPhone/iPad: Nastavení → Přístupnost → Mluvený obsah → Hlasy → přidejte hlas pro {language}.",
+    "linux": "Linux: nainstalujte speech-dispatcher s hlasem pro {language} (například espeak-ng nebo RHVoice), nebo použijte Google Chrome, který má vlastní hlasy.",
+    "chrome": "Chrome: hlasy Google bývají součástí prohlížeče; ujistěte se, že je prohlížeč aktuální, a klepněte na Zkontrolovat znovu.",
+    "recheck": "Zkontrolovat znovu",
+    "once": "Toto upozornění se pro každý jazyk zobrazí pouze jednou. Audivise funguje i bez hlasu: všechny rady se zobrazují také písemně."
+  },
+  "footer": {
+    "architect": "Návrh systému: Eliezer Tavares de Oliveira.",
+    "history": "Pokračování práce započaté v rámci projektu „Projeto Integrador V“ (Počítačové inženýrství, UNIVESP) — dnes osobní, neakademický projekt. Veškeré zpracování probíhá v tomto zařízení, bez cloudu."
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "Tiếng Việt (Việt Nam)",
+    "englishName": "Vietnamese (Vietnam)",
+    "bcp47": "vi-VN",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Google Tiếng Việt", "Microsoft HoaiMy", "Microsoft NamMinh", "Google Vietnamese"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "Trợ lý khung hình 100% cục bộ"
+  },
+  "status": {
+    "ready": "Audivise đã sẵn sàng. Nhấn nút Khởi động Trợ lý để bắt đầu.",
+    "engineLoading": "Đang tải bộ máy cục bộ…",
+    "engineReady": "Bộ máy Rust/WebAssembly đã sẵn sàng (phiên bản {version}). Không internet. Không đám mây. Không có gì rời khỏi thiết bị này.",
+    "engineError": "Không thể tải bộ máy cục bộ: {error}",
+    "deviceMobile": "Đã phát hiện: điện thoại",
+    "deviceDesktop": "Đã phát hiện: máy tính (webcam)",
+    "cameraFrontMode": "Chế độ hiện tại: camera trước",
+    "cameraBackMode": "Chế độ hiện tại: camera sau hoặc camera máy tính xách tay"
+  },
+  "buttons": {
+    "start": "Khởi động Trợ lý",
+    "stop": "Dừng Trợ lý",
+    "repeat": "Lặp lại hướng dẫn gần nhất",
+    "cameraFront": "Đổi camera: Trước",
+    "cameraBack": "Đổi camera: Sau",
+    "about": "Giới thiệu về Audivise",
+    "settings": "Ngôn ngữ và Giọng đọc",
+    "close": "Đóng",
+    "ok": "Đã hiểu"
+  },
+  "aria": {
+    "start": "Khởi động hoặc dừng trợ lý khung hình",
+    "repeat": "Lặp lại hướng dẫn nói gần nhất",
+    "camera": "Chuyển đổi giữa camera trước và camera sau",
+    "about": "Nghe thông tin về dự án Audivise",
+    "settings": "Mở cài đặt ngôn ngữ và giọng đọc",
+    "closeSettings": "Đóng cài đặt",
+    "interfaceLanguage": "Chọn ngôn ngữ giao diện",
+    "voiceLanguage": "Chọn ngôn ngữ giọng đọc",
+    "voiceSelect": "Chọn giọng đọc đã cài cho ngôn ngữ đã chọn",
+    "rate": "Điều chỉnh tốc độ đọc",
+    "status": "Trạng thái của trợ lý"
+  },
+  "fileProtocol": {
+    "warning": "Bạn đã mở index.html trực tiếp từ ổ đĩa. Vì quy tắc bảo mật của trình duyệt, camera và bộ máy cần một máy chủ cục bộ: hãy đóng thẻ này và khởi động bằng trình khởi động dành cho hệ điều hành của bạn — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux) hoặc iniciar-audivise-android.sh (Android, qua Termux).",
+    "blocked": "Ứng dụng này phải được mở qua trình khởi động cục bộ. Hãy đóng thẻ này và nhấp đúp vào trình khởi động của hệ điều hành (INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "Camera đã bật. Đang phân tích khuôn mặt của bạn.",
+    "cameraError": "Lỗi khi truy cập camera. Hãy kiểm tra quyền của trình duyệt.",
+    "stopped": "Trợ lý đã dừng.",
+    "noFace": "Tôi không tìm thấy khuôn mặt của bạn. Hãy kiểm tra camera đã bật và không bị che.",
+    "nothingToRepeat": "Chưa có hướng dẫn nào để lặp lại.",
+    "engineLoading": "Bộ máy vẫn đang tải. Hãy thử lại sau ít phút.",
+    "cameraRestartError": "Tôi không thể khởi động lại camera.",
+    "frontSelected": "Đã chọn camera trước.",
+    "backSelected": "Đã chọn camera sau."
+  },
+  "issues": {
+    "MOVE_RIGHT": "đưa điện thoại sang phải",
+    "MOVE_LEFT": "đưa điện thoại sang trái",
+    "LOWER_CAMERA": "hạ camera xuống một chút",
+    "RAISE_CAMERA": "nâng camera lên một chút",
+    "MOVE_CLOSER": "đưa khuôn mặt lại gần camera hơn",
+    "MOVE_AWAY": "đưa khuôn mặt ra xa camera hơn"
+  },
+  "verdict": {
+    "perfect": "Khung hình hoàn hảo! Bạn có thể bắt đầu ghi hình."
+  },
+  "about": {
+    "narrative": "Audivise, phiên bản 1, bản phát hành cục bộ và riêng tư. Hệ thống do Eliezer Tavares de Oliveira thiết kế kiến trúc. Đây là sự tiếp nối công việc bắt đầu tại Projeto Integrador V (Đồ án tích hợp V) của ngành Kỹ thuật Máy tính tại UNIVESP. Hiện nay đây là dự án cá nhân, không mang tính học thuật. Bản này chạy hoàn toàn trên thiết bị của bạn: bộ máy ra quyết định được viết bằng Rust, biên dịch sang WebAssembly, còn việc nhận diện khuôn mặt thực hiện cục bộ. Không một hình ảnh, tọa độ hay từ ngữ nào rời khỏi máy của bạn."
+  },
+  "settings": {
+    "title": "Ngôn ngữ và giọng đọc",
+    "interfaceLanguage": "Ngôn ngữ giao diện",
+    "voiceLanguage": "Ngôn ngữ giọng đọc",
+    "voice": "Giọng đọc đã cài",
+    "voiceSystemDefault": "Giọng đọc mặc định của hệ thống cho ngôn ngữ này",
+    "voiceNone": "Chưa có giọng đọc nào được cài cho ngôn ngữ này",
+    "speechRate": "Tốc độ đọc",
+    "saved": "Đã lưu tùy chọn.",
+    "testVoice": "Thử giọng đọc"
+  },
+  "voiceInstall": {
+    "title": "Không tìm thấy giọng đọc trên hệ thống này",
+    "intro": "Chưa có giọng đọc nào được cài cho {language}. Để nghe hướng dẫn bằng ngôn ngữ này, hãy cài một giọng đọc của hệ thống — chỉ cần làm một lần:",
+    "windows": "Windows: Cài đặt → Thời gian và Ngôn ngữ → Giọng nói → Quản lý giọng đọc → Thêm giọng đọc → chọn {language}.",
+    "macos": "macOS: Cài đặt hệ thống → Trợ năng → Nội dung được đọc → Giọng đọc hệ thống → Quản lý Giọng đọc → tải xuống một giọng đọc {language}.",
+    "android": "Android: Cài đặt → Hệ thống → Ngôn ngữ & phương thức nhập → Đầu ra → Chuyển văn bản thành giọng nói → Google Text-to-Speech → Cài đặt dữ liệu giọng nói → {language}.",
+    "ios": "iPhone/iPad: Cài đặt → Trợ năng → Nội dung được đọc → Giọng đọc → thêm một giọng đọc cho {language}.",
+    "linux": "Linux: hãy cài speech-dispatcher với một giọng đọc cho {language} (ví dụ espeak-ng hoặc RHVoice), hoặc dùng Google Chrome vốn đã có sẵn giọng đọc riêng.",
+    "chrome": "Chrome: giọng đọc của Google thường có sẵn; hãy đảm bảo trình duyệt đã cập nhật rồi nhấn Kiểm tra lại.",
+    "recheck": "Kiểm tra lại",
+    "once": "Thông báo này chỉ xuất hiện một lần cho mỗi ngôn ngữ. Audivise vẫn hoạt động khi không có giọng đọc: mọi hướng dẫn cũng được hiển thị dưới dạng văn bản."
+  },
+  "footer": {
+    "architect": "Do Eliezer Tavares de Oliveira thiết kế kiến trúc.",
+    "history": "Tiếp nối công việc bắt đầu tại Projeto Integrador V (Đồ án tích hợp V) của ngành Kỹ thuật Máy tính, UNIVESP — nay là một dự án cá nhân, không mang tính học thuật. Mọi xử lý đều diễn ra trên thiết bị này, không dùng đám mây."
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "Nederlands (Nederland)",
+    "englishName": "Dutch (Netherlands)",
+    "bcp47": "nl-NL",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Microsoft Frank", "Microsoft Geert", "Google Nederlands", "Ellen", "Xander", "Fenna"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "100% lokale kadreringsassistent"
+  },
+  "status": {
+    "ready": "Audivise is klaar. Druk op de knop Assistent starten om te beginnen.",
+    "engineLoading": "Lokale engine wordt geladen…",
+    "engineReady": "Rust/WebAssembly-engine gereed (versie {version}). Geen internet. Geen cloud. Niets verlaat dit apparaat.",
+    "engineError": "Kan de lokale engine niet laden: {error}",
+    "deviceMobile": "Gedetecteerd: smartphone",
+    "deviceDesktop": "Gedetecteerd: computer (webcam)",
+    "cameraFrontMode": "Huidige modus: camera aan de voorkant",
+    "cameraBackMode": "Huidige modus: camera aan de achterkant of laptopcamera"
+  },
+  "buttons": {
+    "start": "Assistent starten",
+    "stop": "Assistent stoppen",
+    "repeat": "Laatste aanwijzing herhalen",
+    "cameraFront": "Camera wisselen: voorkant",
+    "cameraBack": "Camera wisselen: achterkant",
+    "about": "Over Audivise",
+    "settings": "Taal en stem",
+    "close": "Sluiten",
+    "ok": "Begrepen"
+  },
+  "aria": {
+    "start": "De kadreringsassistent starten of stoppen",
+    "repeat": "De laatst gesproken aanwijzing herhalen",
+    "camera": "Wisselen tussen de camera aan de voorkant en de camera aan de achterkant",
+    "about": "Informatie over het Audivise-project beluisteren",
+    "settings": "Instellingen voor taal en stem openen",
+    "closeSettings": "De instellingen sluiten",
+    "interfaceLanguage": "De taal van de interface selecteren",
+    "voiceLanguage": "De taal van de stem selecteren",
+    "voiceSelect": "Een geïnstalleerde stem voor de gekozen taal selecteren",
+    "rate": "Het spreektempo aanpassen",
+    "status": "Status van de assistent"
+  },
+  "fileProtocol": {
+    "warning": "Je hebt index.html rechtstreeks vanaf de schijf geopend. Vanwege de beveiligingsregels van de browser hebben de camera en de engine een lokale server nodig: sluit dit tabblad en start via het bestand van je systeem — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux) of iniciar-audivise-android.sh (Android, via Termux).",
+    "blocked": "Deze app moet via de lokale starter worden geopend. Sluit dit tabblad en dubbelklik op de starter van je systeem (INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "Camera aan. Ik analyseer je gezicht.",
+    "cameraError": "Fout bij het openen van de camera. Controleer de toestemming in de browser.",
+    "stopped": "Assistent gestopt.",
+    "noFace": "Ik kan je gezicht niet vinden. Controleer of de camera aan staat en niet geblokkeerd is.",
+    "nothingToRepeat": "Er zijn nog geen aanwijzingen om te herhalen.",
+    "engineLoading": "De engine is nog aan het laden. Probeer het over een ogenblik opnieuw.",
+    "cameraRestartError": "Ik kon de camera niet opnieuw starten.",
+    "frontSelected": "Camera aan de voorkant geselecteerd.",
+    "backSelected": "Camera aan de achterkant geselecteerd."
+  },
+  "issues": {
+    "MOVE_RIGHT": "beweeg de telefoon naar rechts",
+    "MOVE_LEFT": "beweeg de telefoon naar links",
+    "LOWER_CAMERA": "beweeg de camera iets naar beneden",
+    "RAISE_CAMERA": "beweeg de camera iets naar boven",
+    "MOVE_CLOSER": "breng je gezicht dichter bij de camera",
+    "MOVE_AWAY": "beweeg je gezicht van de camera af"
+  },
+  "verdict": {
+    "perfect": "Perfecte kadrering! Je kunt beginnen met opnemen."
+  },
+  "about": {
+    "narrative": "Audivise, versie 1, lokale en privé-editie. Systeem ontworpen door Eliezer Tavares de Oliveira. Dit is een vervolg op het werk dat is begonnen in het Projeto Integrador V (Geïntegreerd Project V), van de opleiding Computertechniek aan de Univesp. Het is nu een persoonlijk, niet-academisch project. Deze editie draait volledig op je apparaat: de beslissingsengine is geschreven in Rust en gecompileerd naar WebAssembly, en de gezichtsdetectie is lokaal. Geen enkele afbeelding, coördinaat of zin verlaat je computer."
+  },
+  "settings": {
+    "title": "Taal en stem",
+    "interfaceLanguage": "Taal van de interface",
+    "voiceLanguage": "Taal van de stem",
+    "voice": "Geïnstalleerde stem",
+    "voiceSystemDefault": "Standaardstem van het systeem voor deze taal",
+    "voiceNone": "Geen stem geïnstalleerd voor deze taal",
+    "speechRate": "Spreektempo",
+    "saved": "Voorkeuren opgeslagen.",
+    "testVoice": "Stem testen"
+  },
+  "voiceInstall": {
+    "title": "Geen stem gevonden op dit systeem",
+    "intro": "Er is geen stem geïnstalleerd voor {language}. Om de aanwijzingen in deze taal te horen, installeer je een systeemstem — dit hoeft maar één keer:",
+    "windows": "Windows: Instellingen → Tijd en taal → Spraak → Stemmen beheren → Stemmen toevoegen → kies {language}.",
+    "macos": "macOS: Systeeminstellingen → Toegankelijkheid → Gesproken inhoud → Systeemstem → Stemmen beheren → download een stem voor {language}.",
+    "android": "Android: Instellingen → Systeem → Talen en invoer → Uitvoer → Spraaksynthese → Google Text-to-Speech → Spraakgegevens installeren → {language}.",
+    "ios": "iPhone/iPad: Instellingen → Toegankelijkheid → Gesproken inhoud → Stemmen → voeg een stem voor {language} toe.",
+    "linux": "Linux: installeer speech-dispatcher met een stem voor {language} (bijvoorbeeld espeak-ng of RHVoice), of gebruik Google Chrome, dat eigen stemmen meebrengt.",
+    "chrome": "Chrome: de Google-stemmen zijn meestal al aanwezig; controleer of de browser up-to-date is en tik op Opnieuw controleren.",
+    "recheck": "Opnieuw controleren",
+    "once": "Deze melding verschijnt slechts één keer per taal. Audivise werkt ook zonder stem: alle aanwijzingen worden ook als tekst getoond."
+  },
+  "footer": {
+    "architect": "Ontworpen door Eliezer Tavares de Oliveira.",
+    "history": "Vervolg op het werk dat is begonnen in het Projeto Integrador V (Geïntegreerd Project V) van de opleiding Computertechniek aan de UNIVESP — inmiddels een persoonlijk, niet-academisch project. Alle verwerking gebeurt op dit apparaat, zonder cloud."
+  }
+}

@@ -1,0 +1,33 @@
+# ===========================================================================
+# COPYRIGHT (C) 2026 ELIEZER TAVARES DE OLIVEIRA
+# PROJECT / PROJETO: AUDIVISE
+# CONTEXT / CONTEXTO:
+#   Continuação do Projeto Integrador V - Engenharia de Computação (UNIVESP)
+#   Versão 1.0 - projeto pessoal, não acadêmico.
+#   Arquitetado por Eliezer Tavares de Oliveira.
+# LICENSE / LICENÇA: GNU General Public License v3.0 (GPLv3)
+# ===========================================================================
+
+[package]
+name = "audivise_engine"
+version = "1.0.0"
+edition = "2021"
+description = "Motor geométrico de enquadramento do Audivise, compilado para WebAssembly. Arquitetado por Eliezer Tavares de Oliveira."
+license = "GPL-3.0-or-later"
+repository = "https://github.com/eliezer-tavares/audivise"
+keywords = ["accessibility", "wasm", "framing", "assistive"]
+categories = ["wasm"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3"
+
+[profile.release]
+opt-level = "s"
+lto = true
+panic = "abort"

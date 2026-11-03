@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "Svenska (Sverige)",
+    "englishName": "Swedish (Sweden)",
+    "bcp47": "sv-SE",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Microsoft Birgitta", "Microsoft Sofie", "Microsoft Mattias", "Google svenska", "Alva", "Oskar"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "100 % lokal kadreringsassistent"
+  },
+  "status": {
+    "ready": "Audivise är redo. Tryck på knappen Starta assistenten för att börja.",
+    "engineLoading": "Läser in lokal motor…",
+    "engineReady": "Rust/WebAssembly-motorn är klar (version {version}). Inget internet. Ingen molntjänst. Inget lämnar den här enheten.",
+    "engineError": "Det gick inte att läsa in den lokala motorn: {error}",
+    "deviceMobile": "Upptäckt: mobiltelefon",
+    "deviceDesktop": "Upptäckt: dator (webbkamera)",
+    "cameraFrontMode": "Aktuellt läge: framkamera",
+    "cameraBackMode": "Aktuellt läge: bakkamera eller kameran på en bärbar dator"
+  },
+  "buttons": {
+    "start": "Starta assistenten",
+    "stop": "Stoppa assistenten",
+    "repeat": "Upprepa senaste rådet",
+    "cameraFront": "Byt kamera: fram",
+    "cameraBack": "Byt kamera: bak",
+    "about": "Om Audivise",
+    "settings": "Språk och röst",
+    "close": "Stäng",
+    "ok": "Uppfattat"
+  },
+  "aria": {
+    "start": "Starta eller stoppa kadreringsassistenten",
+    "repeat": "Upprepa senaste talade rådet",
+    "camera": "Växla mellan framkamera och bakkamera",
+    "about": "Lyssna på information om projektet Audivise",
+    "settings": "Öppna språk- och röstinställningar",
+    "closeSettings": "Stäng inställningarna",
+    "interfaceLanguage": "Välj gränssnittsspråk",
+    "voiceLanguage": "Välj språk för rösten",
+    "voiceSelect": "Välj en installerad röst för det valda språket",
+    "rate": "Justera talhastigheten",
+    "status": "Assistentens status"
+  },
+  "fileProtocol": {
+    "warning": "Du öppnade index.html direkt från disken. Av säkerhetsskäl i webbläsaren behöver kameran och motorn en lokal server: stäng den här fliken och starta appen med startprogrammet för ditt system — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux) eller iniciar-audivise-android.sh (Android, via Termux).",
+    "blocked": "Appen måste öppnas via det lokala startprogrammet. Stäng den här fliken och dubbelklicka på startprogrammet för ditt system (INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "Kameran är på. Analyserar ditt ansikte.",
+    "cameraError": "Det gick inte att komma åt kameran. Kontrollera webbläsarens behörighet.",
+    "stopped": "Assistenten har stoppats.",
+    "noFace": "Jag hittar inte ditt ansikte. Kontrollera att kameran är på och inte blockerad.",
+    "nothingToRepeat": "Det finns inga råd att upprepa ännu.",
+    "engineLoading": "Motorn läser fortfarande in. Försök igen om en stund.",
+    "cameraRestartError": "Jag kunde inte starta om kameran.",
+    "frontSelected": "Framkamera vald.",
+    "backSelected": "Bakkamera vald."
+  },
+  "issues": {
+    "MOVE_RIGHT": "flytta telefonen åt höger",
+    "MOVE_LEFT": "flytta telefonen åt vänster",
+    "LOWER_CAMERA": "sänk kameran lite",
+    "RAISE_CAMERA": "höj kameran lite",
+    "MOVE_CLOSER": "flytta ansiktet närmare kameran",
+    "MOVE_AWAY": "flytta ansiktet längre bort från kameran"
+  },
+  "verdict": {
+    "perfect": "Perfekt bildutsnitt! Du kan börja spela in."
+  },
+  "about": {
+    "narrative": "Audivise, version 1, en lokal och privat utgåva. Systemet är utformat av Eliezer Tavares de Oliveira. Detta är en fortsättning av arbetet som inleddes i projektet ”Projeto Integrador V” (ett integrerande projekt) inom datateknik vid UNIVESP. Numera är det ett personligt, icke-akademiskt projekt. Den här utgåvan körs helt på din enhet: beslutsmotorn är skriven i Rust och kompilerad till WebAssembly, och ansiktsdetekteringen sker lokalt. Ingen bild, ingen koordinat och inget ord lämnar någonsin din dator."
+  },
+  "settings": {
+    "title": "Språk och röst",
+    "interfaceLanguage": "Gränssnittsspråk",
+    "voiceLanguage": "Språk för rösten",
+    "voice": "Installerad röst",
+    "voiceSystemDefault": "Systemets standardröst för det här språket",
+    "voiceNone": "Ingen röst installerad för det här språket",
+    "speechRate": "Talhastighet",
+    "saved": "Inställningarna har sparats.",
+    "testVoice": "Testa röst"
+  },
+  "voiceInstall": {
+    "title": "Ingen röst hittades på det här systemet",
+    "intro": "Det finns ingen installerad röst för {language}. För att höra råden på det här språket, installera en systemröst — det behöver bara göras en gång:",
+    "windows": "Windows: Inställningar → Tid och språk → Tal → Hantera röster → Lägg till röster → välj {language}.",
+    "macos": "macOS: Systeminställningar → Hjälpmedel → Upplest innehåll → Systemröst → Hantera röster → hämta en röst för {language}.",
+    "android": "Android: Inställningar → System → Språk och inmatning → Utdata → Text-till-tal → Google Text-to-Speech → Installera röstdata → {language}.",
+    "ios": "iPhone/iPad: Inställningar → Hjälpmedel → Upplest innehåll → Röster → lägg till en röst för {language}.",
+    "linux": "Linux: installera speech-dispatcher med en röst för {language} (till exempel espeak-ng eller RHVoice), eller använd Google Chrome, som har egna röster.",
+    "chrome": "Chrome: Googles röster följer vanligtvis med; kontrollera att webbläsaren är uppdaterad och tryck på Kontrollera igen.",
+    "recheck": "Kontrollera igen",
+    "once": "Det här meddelandet visas bara en gång per språk. Audivise fungerar även utan röst: alla råd visas också som text."
+  },
+  "footer": {
+    "architect": "Utformat av Eliezer Tavares de Oliveira.",
+    "history": "Fortsättning av arbetet som inleddes i projektet ”Projeto Integrador V” (datateknik, UNIVESP) — i dag ett personligt, icke-akademiskt projekt. All bearbetning sker på den här enheten, utan moln."
+  }
+}

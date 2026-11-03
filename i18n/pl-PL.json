@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "Polski (Polska)",
+    "englishName": "Polish (Poland)",
+    "bcp47": "pl-PL",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Microsoft Paulina", "Google polski", "Zosia", "Agata"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "Asystent kadrowania w 100% lokalny"
+  },
+  "status": {
+    "ready": "Audivise jest gotowy. Naciśnij przycisk Uruchom asystenta, aby rozpocząć.",
+    "engineLoading": "Wczytywanie lokalnego silnika…",
+    "engineReady": "Silnik Rust/WebAssembly jest gotowy (wersja {version}). Zero internetu. Zero chmury. Nic nie opuszcza tego urządzenia.",
+    "engineError": "Nie udało się wczytać lokalnego silnika: {error}",
+    "deviceMobile": "Wykryto: telefon komórkowy",
+    "deviceDesktop": "Wykryto: komputer (kamera internetowa)",
+    "cameraFrontMode": "Aktualny tryb: kamera przednia",
+    "cameraBackMode": "Aktualny tryb: kamera tylna lub kamera laptopa"
+  },
+  "buttons": {
+    "start": "Uruchom asystenta",
+    "stop": "Zatrzymaj asystenta",
+    "repeat": "Powtórz ostatnią wskazówkę",
+    "cameraFront": "Przełącz kamerę: przednia",
+    "cameraBack": "Przełącz kamerę: tylna",
+    "about": "O Audivise",
+    "settings": "Język i głos",
+    "close": "Zamknij",
+    "ok": "Rozumiem"
+  },
+  "aria": {
+    "start": "Uruchom lub zatrzymaj asystenta kadrowania",
+    "repeat": "Powtórz ostatnią wypowiedzianą wskazówkę",
+    "camera": "Przełącz między kamerą przednią a tylną",
+    "about": "Posłuchaj informacji o projekcie Audivise",
+    "settings": "Otwórz ustawienia języka i głosu",
+    "closeSettings": "Zamknij ustawienia",
+    "interfaceLanguage": "Wybierz język interfejsu",
+    "voiceLanguage": "Wybierz język głosu",
+    "voiceSelect": "Wybierz zainstalowany głos dla wybranego języka",
+    "rate": "Dostosuj tempo mowy",
+    "status": "Status asystenta"
+  },
+  "fileProtocol": {
+    "warning": "Plik index.html został otwarty bezpośrednio z dysku. Ze względów bezpieczeństwa przeglądarki kamera i silnik wymagają lokalnego serwera: zamknij tę kartę i uruchom aplikację za pomocą programu startowego dla Twojego systemu — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux) lub iniciar-audivise-android.sh (Android, przez Termux).",
+    "blocked": "Tę aplikację trzeba otworzyć za pomocą lokalnego programu startowego. Zamknij tę kartę i kliknij dwukrotnie program startowy swojego systemu (INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "Kamera włączona. Analizuję Twoją twarz.",
+    "cameraError": "Błąd dostępu do kamery. Sprawdź uprawnienia przeglądarki.",
+    "stopped": "Asystent zatrzymany.",
+    "noFace": "Nie znalazłem Twojej twarzy. Upewnij się, że kamera jest włączona i niczym nie zasłonięta.",
+    "nothingToRepeat": "Nie ma jeszcze wskazówek do powtórzenia.",
+    "engineLoading": "Silnik jest jeszcze wczytywany. Spróbuj ponownie za chwilę.",
+    "cameraRestartError": "Nie udało mi się ponownie uruchomić kamery.",
+    "frontSelected": "Wybrano kamerę przednią.",
+    "backSelected": "Wybrano kamerę tylną."
+  },
+  "issues": {
+    "MOVE_RIGHT": "przesuń telefon w prawo",
+    "MOVE_LEFT": "przesuń telefon w lewo",
+    "LOWER_CAMERA": "obniż nieco kamerę",
+    "RAISE_CAMERA": "podnieś nieco kamerę",
+    "MOVE_CLOSER": "zbliż twarz do kamery",
+    "MOVE_AWAY": "oddal twarz od kamery"
+  },
+  "verdict": {
+    "perfect": "Kadrowanie idealne! Możesz zacząć nagrywanie."
+  },
+  "about": {
+    "narrative": "Audivise, wersja 1, edycja lokalna i prywatna. System zaprojektował Eliezer Tavares de Oliveira. To kontynuacja pracy rozpoczętej w ramach projektu „Projeto Integrador V” (projektu integracyjnego V) na kierunku Inżynieria Komputerowa uniwersytetu UNIVESP. Obecnie jest to projekt osobisty, nieakademicki. Ta edycja działa w całości na Twoim urządzeniu: silnik decyzyjny napisano w języku Rust i skompilowano do WebAssembly, a wykrywanie twarzy odbywa się lokalnie. Żaden obraz, żadna współrzędna ani żadne słowo nie opuszczają Twojego komputera."
+  },
+  "settings": {
+    "title": "Język i głos",
+    "interfaceLanguage": "Język interfejsu",
+    "voiceLanguage": "Język głosu",
+    "voice": "Zainstalowany głos",
+    "voiceSystemDefault": "Domyślny głos systemowy dla tego języka",
+    "voiceNone": "Brak zainstalowanego głosu dla tego języka",
+    "speechRate": "Tempo mowy",
+    "saved": "Preferencje zostały zapisane.",
+    "testVoice": "Przetestuj głos"
+  },
+  "voiceInstall": {
+    "title": "Nie znaleziono głosu w tym systemie",
+    "intro": "Brak zainstalowanego głosu dla języka {language}. Aby słyszeć wskazówki w tym języku, zainstaluj głos systemowy — wystarczy zrobić to tylko raz:",
+    "windows": "Windows: Ustawienia → Czas i język → Mowa → Zarządzaj głosami → Dodaj głosy → wybierz {language}.",
+    "macos": "macOS: Ustawienia systemowe → Dostępność → Treść mówiona → Głos systemowy → Zarządzaj głosami → pobierz głos dla języka {language}.",
+    "android": "Android: Ustawienia → System → Języki i wprowadzanie → Wyjście → Synteza mowy → Google Text-to-Speech → Zainstaluj dane głosowe → {language}.",
+    "ios": "iPhone/iPad: Ustawienia → Dostępność → Treść mówiona → Głosy → dodaj głos dla języka {language}.",
+    "linux": "Linux: zainstaluj speech-dispatcher z głosem dla języka {language} (na przykład espeak-ng albo RHVoice) lub użyj przeglądarki Google Chrome, która ma własne głosy.",
+    "chrome": "Chrome: głosy Google są zwykle dostępne od razu; upewnij się, że przeglądarka jest aktualna, i dotknij przycisku Sprawdź ponownie.",
+    "recheck": "Sprawdź ponownie",
+    "once": "Ten komunikat pojawia się tylko raz dla każdego języka. Audivise działa również bez głosu: wszystkie wskazówki są także wyświetlane jako tekst."
+  },
+  "footer": {
+    "architect": "Zaprojektowane przez Eliezer Tavares de Oliveira.",
+    "history": "Kontynuacja pracy rozpoczętej w ramach projektu „Projeto Integrador V” (Inżynieria Komputerowa, UNIVESP) — dziś osobisty, nieakademicki projekt. Całe przetwarzanie odbywa się na tym urządzeniu, bez chmury."
+  }
+}

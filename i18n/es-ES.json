@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "Español (España)",
+    "englishName": "Spanish (Spain)",
+    "bcp47": "es-ES",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Microsoft Elvira", "Microsoft Helena", "Microsoft Dalia", "Google español", "Mónica", "Paulina"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "Asistente de encuadre 100% local"
+  },
+  "status": {
+    "ready": "Audivise está listo. Pulsa el botón Iniciar Asistente para comenzar.",
+    "engineLoading": "Cargando el motor local…",
+    "engineReady": "Motor Rust/WebAssembly listo (versión {version}). Sin internet. Sin nube. Nada sale de este dispositivo.",
+    "engineError": "Error al cargar el motor local: {error}",
+    "deviceMobile": "Detectado: móvil",
+    "deviceDesktop": "Detectado: ordenador (cámara web)",
+    "cameraFrontMode": "Modo actual: cámara frontal",
+    "cameraBackMode": "Modo actual: cámara trasera o del portátil"
+  },
+  "buttons": {
+    "start": "Iniciar Asistente",
+    "stop": "Detener Asistente",
+    "repeat": "Repetir Última Orientación",
+    "cameraFront": "Cambiar Cámara: Frontal",
+    "cameraBack": "Cambiar Cámara: Trasera",
+    "about": "Acerca de Audivise",
+    "settings": "Idioma y Voz",
+    "close": "Cerrar",
+    "ok": "Entendido"
+  },
+  "aria": {
+    "start": "Iniciar o detener el asistente de encuadre",
+    "repeat": "Repetir la última orientación hablada",
+    "camera": "Alternar entre la cámara frontal y la cámara trasera",
+    "about": "Escuchar información sobre el proyecto Audivise",
+    "settings": "Abrir la configuración de idioma y voz",
+    "closeSettings": "Cerrar la configuración",
+    "interfaceLanguage": "Seleccionar el idioma de la interfaz",
+    "voiceLanguage": "Seleccionar el idioma de la voz",
+    "voiceSelect": "Seleccionar una voz instalada para el idioma elegido",
+    "rate": "Ajustar la velocidad de la voz",
+    "status": "Estado del asistente"
+  },
+  "fileProtocol": {
+    "warning": "Has abierto index.html directamente desde el disco. Por las reglas de seguridad del navegador, la cámara y el motor necesitan un servidor local: cierra esta pestaña e inicia mediante el archivo de tu sistema — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux) o iniciar-audivise-android.sh (Android, mediante Termux).",
+    "blocked": "Esta aplicación debe abrirse mediante el iniciador local. Cierra esta pestaña y haz doble clic en el iniciador de tu sistema (INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "Cámara encendida. Analizando tu rostro.",
+    "cameraError": "Error al acceder a la cámara. Comprueba el permiso del navegador.",
+    "stopped": "Asistente detenido.",
+    "noFace": "No he encontrado tu rostro. Comprueba que la cámara está encendida y desbloqueada.",
+    "nothingToRepeat": "Todavía no hay orientaciones para repetir.",
+    "engineLoading": "El motor todavía se está cargando. Inténtalo de nuevo en unos instantes.",
+    "cameraRestartError": "No he podido reiniciar la cámara.",
+    "frontSelected": "Cámara frontal seleccionada.",
+    "backSelected": "Cámara trasera seleccionada."
+  },
+  "issues": {
+    "MOVE_RIGHT": "mueve el móvil a la derecha",
+    "MOVE_LEFT": "mueve el móvil a la izquierda",
+    "LOWER_CAMERA": "baja un poco la cámara",
+    "RAISE_CAMERA": "sube un poco la cámara",
+    "MOVE_CLOSER": "acerca tu rostro a la cámara",
+    "MOVE_AWAY": "aleja tu rostro de la cámara"
+  },
+  "verdict": {
+    "perfect": "¡Encuadre perfecto! Puedes empezar a grabar."
+  },
+  "about": {
+    "narrative": "Audivise, versión 1, edición local y privada. Sistema arquitectado por Eliezer Tavares de Oliveira. Es la continuación del trabajo iniciado en el Projeto Integrador V (Proyecto Integrador V), del grado de Ingeniería Informática de la Univesp. Ahora es un proyecto personal, no académico. Esta edición funciona íntegramente en tu dispositivo: el motor de decisión está escrito en Rust, compilado a WebAssembly, y la detección facial es local. Ninguna imagen, coordenada ni palabra sale de tu equipo."
+  },
+  "settings": {
+    "title": "Idioma y voz",
+    "interfaceLanguage": "Idioma de la interfaz",
+    "voiceLanguage": "Idioma de la voz",
+    "voice": "Voz instalada",
+    "voiceSystemDefault": "Voz predeterminada del sistema para este idioma",
+    "voiceNone": "No hay ninguna voz instalada para este idioma",
+    "speechRate": "Velocidad de la voz",
+    "saved": "Preferencias guardadas.",
+    "testVoice": "Probar voz"
+  },
+  "voiceInstall": {
+    "title": "No se ha encontrado ninguna voz en este sistema",
+    "intro": "No hay ninguna voz instalada para {language}. Para escuchar las orientaciones en este idioma, instala una voz del sistema — solo es necesario hacerlo una vez:",
+    "windows": "Windows: Configuración → Hora e idioma → Voz → Administrar voces → Agregar voces → elige {language}.",
+    "macos": "macOS: Ajustes del Sistema → Accesibilidad → Contenido leído → Voz del sistema → Administrar voces → descarga una voz de {language}.",
+    "android": "Android: Ajustes → Sistema → Idiomas y entrada → Salida → Síntesis de voz → Google Text-to-Speech → Instalar datos de voz → {language}.",
+    "ios": "iPhone/iPad: Ajustes → Accesibilidad → Contenido leído → Voces → añade una voz para {language}.",
+    "linux": "Linux: instala speech-dispatcher con una voz para {language} (por ejemplo, espeak-ng o RHVoice), o usa Google Chrome, que ya incorpora voces propias.",
+    "chrome": "Chrome: las voces de Google suelen venir incluidas; comprueba que el navegador esté actualizado y pulsa Comprobar de nuevo.",
+    "recheck": "Comprobar de nuevo",
+    "once": "Este aviso aparece solo una vez por idioma. Audivise funciona incluso sin voz: todas las orientaciones también se muestran por escrito."
+  },
+  "footer": {
+    "architect": "Arquitectado por Eliezer Tavares de Oliveira.",
+    "history": "Continuación del trabajo iniciado en el Projeto Integrador V (Proyecto Integrador V) del grado de Ingeniería Informática de la UNIVESP — hoy, un proyecto personal y no académico. Todo el procesamiento se realiza en este dispositivo, sin nube."
+  }
+}

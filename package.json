@@ -1,0 +1,30 @@
+{
+    "name": "audivise",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "description": "Audivise — assistente de enquadramento facial acessível e 100% local. Arquitetado por Eliezer Tavares de Oliveira.",
+    "license": "GPL-3.0-or-later",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/eliezer-tavares/audivise.git"
+    },
+    "author": "Eliezer Tavares de Oliveira <contact@eliezertavaresdeoliveira.com> (https://orcid.org/0009-0007-2577-8635)",
+    "scripts": {
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:e2e": "playwright test",
+        "test:a11y": "playwright test tests/e2e/a11y.spec.js",
+        "test:all": "npm run test && npm run test:e2e",
+        "serve": "python3 servidor.py --sem-navegador",
+        "build:wasm": "bash scripts/build-wasm.sh",
+        "check:integrity": "node scripts/check-integrity.mjs",
+        "check:privacy": "node scripts/check-privacy.mjs",
+        "check": "npm run check:integrity && npm run check:privacy"
+    },
+    "devDependencies": {
+        "@playwright/test": "^1.49.1",
+        "axe-core": "^4.10.2",
+        "vitest": "^3.0.5"
+    }
+}

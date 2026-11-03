@@ -1,0 +1,105 @@
+# ===========================================================================
+# COPYRIGHT (C) 2026 ELIEZER TAVARES DE OLIVEIRA
+# PROJECT / PROJETO: AUDIVISE 1.0 — release (GitHub Actions)
+# CONTEXT / CONTEXTO:
+#   Continuação do Projeto Integrador V - Engenharia de Computação (UNIVESP).
+#   Projeto pessoal e não acadêmico.
+#   Arquitetado por Eliezer Tavares de Oliveira.
+# LICENSE / LICENÇA: GNU General Public License v3.0 (GPLv3)
+# ===========================================================================
+# A cada tag v* (ex.: v1.0.0): recompila o motor WebAssembly, roda os portões
+# de qualidade (testes nativos, Vitest, integridade e privacidade), empacota
+# a pasta local em ZIP e publica na GitHub Release da tag.
+
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  pacote-local:
+    name: Compila, valida e publica o pacote local (ZIP)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instala o Rust estável + alvo wasm32
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Cache do Cargo
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: engine
+
+      - name: Instala o wasm-bindgen-cli 0.2.130 (binário pré-compilado)
+        run: |
+          VERSAO=0.2.130
+          curl -sSfL "https://github.com/rustwasm/wasm-bindgen/releases/download/${VERSAO}/wasm-bindgen-${VERSAO}-x86_64-unknown-linux-musl.tar.gz" -o /tmp/wbg.tar.gz
+          tar -xzf /tmp/wbg.tar.gz -C /tmp
+          sudo mv "/tmp/wasm-bindgen-${VERSAO}-x86_64-unknown-linux-musl/wasm-bindgen" /usr/local/bin/
+
+      # ============== Portões de qualidade (falha aborta o release) ==============
+      - name: Testes nativos do motor
+        working-directory: engine
+        run: cargo test --release
+
+      - name: Compila o motor para WebAssembly e gera o glue JS
+        working-directory: engine
+        run: |
+          cargo build --release --target wasm32-unknown-unknown
+          wasm-bindgen --target web --out-dir pkg \
+            target/wasm32-unknown-unknown/release/audivise_engine.wasm
+
+      - name: Instala dependências
+        run: npm ci
+
+      - name: Integridade do projeto
+        run: npm run check:integrity
+
+      - name: Privacidade estática
+        run: npm run check:privacy
+
+      - name: Testes unitários (Vitest)
+        run: npm test
+
+      # ============================== Empacotamento ==============================
+      - name: Empacota a pasta local em ZIP
+        run: |
+          VERSAO="${GITHUB_REF_NAME#v}"
+          PACOTE="Audivise-${VERSAO}-Local"
+          mkdir -p "/tmp/${PACOTE}"
+          rsync -a --exclude 'node_modules' --exclude 'engine/target' \
+               --exclude 'test-results' --exclude 'playwright-report' \
+               --exclude '.git' --exclude '.github' --exclude 'scripts' \
+               --exclude 'tests' --exclude '.vscode' --exclude '.lake' \
+               --exclude 'lake-manifest.json' \
+               ./ "/tmp/${PACOTE}/"
+          cd /tmp
+          zip -qr "${PACOTE}.zip" "${PACOTE}"
+          sha256sum "${PACOTE}.zip" > "${PACOTE}.zip.sha256"
+          mkdir -p "$GITHUB_WORKSPACE/dist"
+          mv "${PACOTE}.zip" "${PACOTE}.zip.sha256" "$GITHUB_WORKSPACE/dist/"
+          echo "PACOTE=Audivise-${VERSAO}-Local" >> "$GITHUB_ENV"
+
+      - name: Publica a GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/*.zip
+            dist/*.sha256
+          generate_release_notes: true

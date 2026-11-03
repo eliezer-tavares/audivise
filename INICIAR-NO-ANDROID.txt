@@ -1,0 +1,78 @@
+===========================================================================
+AUDIVISE 1.0 NO ANDROID — GUIA PASSO A PASSO
+Copyright (C) 2026 Eliezer Tavares de Oliveira
+Continuação do Projeto Integrador V - Engenharia de Computação (UNIVESP).
+Projeto pessoal e não acadêmico. Licença: GNU GPLv3.
+===========================================================================
+
+O Audivise funciona no Android de duas formas. As duas são 100% locais:
+nenhuma imagem, coordenada ou palavra sai do seu celular.
+
+---------------------------------------------------------------------------
+MANEIRA 1 (mais simples): instalar pelo Chrome como aplicativo (PWA)
+---------------------------------------------------------------------------
+Requisito: alguém já abriu o Audivise uma vez no seu celular (por exemplo,
+via Termux, Maneira 2). Depois disso:
+
+  1. Abra o Chrome no endereço local do Audivise
+     (http://127.0.0.1:8437/index.html).
+  2. Toque no menu do Chrome (três pontos).
+  3. Toque em "Adicionar à tela inicial" / "Instalar aplicativo".
+  4. Pronto: o Audivise vira um ícone no seu Android e abre em tela
+     cheia, sem depender do Termux (o armazenamento local do navegador
+     guarda tudo o que é necessário).
+
+---------------------------------------------------------------------------
+MANEIRA 2: executar pelo Termux (inicia o servidor local no celular)
+---------------------------------------------------------------------------
+
+  1. Instale o Termux pela F-Droid:
+     https://f-droid.org/packages/com.termux/
+     (O Termux da Play Store está desatualizado; use a F-Droid.)
+
+  2. Copie a pasta inteira do Audivise para o celular, por exemplo em:
+     /sdcard/Download/audivise
+     ou no armazenamento interno do Termux:
+     /data/data/com.termux/files/home/audivise
+     (para copiar do /sdcard para a home do Termux:
+        cp -r /sdcard/Download/audivise ~/audivise )
+
+  3. Dê permissão de execução ao iniciador (uma única vez):
+        cd ~/audivise
+        chmod +x iniciar-audivise-android.sh
+
+  4. Execute:
+        ./iniciar-audivise-android.sh
+     Na primeira vez ele oferece instalar o Python automaticamente
+     (responda "s"). Depois ele abre o navegador sozinho no endereço
+     http://127.0.0.1:8437/index.html.
+
+  5. Toque em "Iniciar Assistente" e permita o acesso à câmera.
+
+  IMPORTANTE: mantenha a janela do Termux aberta (ou puxe a notificação
+  do Termux e toque em "Acquire wakelock") enquanto usar o Audivise.
+
+---------------------------------------------------------------------------
+VOZ NO SEU IDIOMA (27 idiomas disponíveis)
+---------------------------------------------------------------------------
+
+  1. Toque no botão "Idioma e Voz".
+  2. Escolha o idioma da interface e o idioma da voz.
+  3. Se o Android não tiver voz instalada para o idioma escolhido, o
+     Audivise mostra (apenas uma vez) como instalar:
+     Configurações → Sistema → Idiomas e entrada → Saída → Síntese de
+     fala → Google Text-to-Speech → Instalar dados de voz.
+     Instale o pacote do idioma desejado e toque em "Verificar novamente".
+
+---------------------------------------------------------------------------
+CÂMERA FRONTAL E TRASEIRA
+---------------------------------------------------------------------------
+Use o botão "Trocar Câmera" para alternar. No Android, a câmera frontal
+é a recomendada para o enquadramento (selfie).
+
+---------------------------------------------------------------------------
+PRIVACIDADE
+---------------------------------------------------------------------------
+O servidor local escuta apenas em 127.0.0.1 — dentro do próprio celular.
+Nenhum quadro de vídeo, coordenada ou texto é enviado à internet.
+Pode desligar o Wi-Fi e os dados móveis: o Audivise continua funcionando.

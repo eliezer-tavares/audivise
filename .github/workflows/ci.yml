@@ -1,0 +1,187 @@
+# ===========================================================================
+# COPYRIGHT (C) 2026 ELIEZER TAVARES DE OLIVEIRA
+# PROJECT / PROJETO: AUDIVISE 1.0 — CI de ponta a ponta (GitHub Actions)
+# CONTEXT / CONTEXTO:
+#   Continuação do Projeto Integrador V - Engenharia de Computação (UNIVESP).
+#   Projeto pessoal e não acadêmico.
+#   Arquitetado por Eliezer Tavares de Oliveira.
+# LICENSE / LICENÇA: GNU General Public License v3.0 (GPLv3)
+# ===========================================================================
+# Pipeline completo: motor Rust (fmt/clippy/testes nativos), compilação
+# WebAssembly com testes DENTRO do navegador real (wasm-bindgen-test),
+# testes unitários web (Vitest), verificação de integridade do projeto,
+# auditorias de acessibilidade (axe-core/WCAG), prova de privacidade
+# (zero requisições externas) e compilação da verificação formal em Lean 4.
+# Um PR só entra se TODOS os portões passarem.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # ==================== 1. Motor Rust (nativo) ====================
+  motor-rust:
+    name: Motor Rust — fmt, clippy e testes nativos
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: engine
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instala o Rust estável (fmt + clippy)
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - name: Cache do Cargo
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: engine
+
+      - name: Formatação (rustfmt)
+        run: cargo fmt --check
+
+      - name: Lint (clippy, warnings = erro)
+        run: cargo clippy --release -- -D warnings
+
+      - name: Testes nativos (10 casos PI-V + fronteiras + NaN)
+        run: cargo test --release
+
+  # ============ 2. Motor WebAssembly (build + testes no navegador) ============
+  motor-wasm:
+    name: Motor WASM — build e wasm-bindgen-test (Chrome headless)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: engine
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instala o Rust estável + alvo wasm32
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Cache do Cargo
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: engine
+
+      - name: Instala o wasm-bindgen-cli 0.2.130 (binário pré-compilado)
+        run: |
+          VERSAO=0.2.130
+          curl -sSfL "https://github.com/rustwasm/wasm-bindgen/releases/download/${VERSAO}/wasm-bindgen-${VERSAO}-x86_64-unknown-linux-musl.tar.gz" -o /tmp/wbg.tar.gz
+          tar -xzf /tmp/wbg.tar.gz -C /tmp
+          sudo mv "/tmp/wasm-bindgen-${VERSAO}-x86_64-unknown-linux-musl/wasm-bindgen" /usr/local/bin/
+          sudo mv "/tmp/wasm-bindgen-${VERSAO}-x86_64-unknown-linux-musl/wasm-bindgen-test-runner" /usr/local/bin/
+          wasm-bindgen --version
+
+      - name: Compila o motor para WebAssembly
+        run: cargo build --release --target wasm32-unknown-unknown
+
+      - name: Gera o glue JS (wasm-bindgen --target web)
+        run: wasm-bindgen --target web --out-dir pkg target/wasm32-unknown-unknown/release/audivise_engine.wasm
+
+      - name: Testes dentro do WASM real (navegador headless)
+        env:
+          CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_RUNNER: wasm-bindgen-test-runner
+          CHROME_BIN: google-chrome
+        run: cargo test --target wasm32-unknown-unknown
+
+      - name: Publica o artefato engine/pkg
+        uses: actions/upload-artifact@v4
+        with:
+          name: engine-pkg
+          path: engine/pkg
+          retention-days: 7
+
+  # ============== 3. Web — integridade, privacidade e Vitest ==============
+  web-testes:
+    name: Web — integridade, privacidade estática e Vitest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instala dependências
+        run: npm ci
+
+      - name: Integridade do projeto (atribuição e terminologia)
+        run: npm run check:integrity
+
+      - name: Privacidade estática (nenhuma chamada externa no código)
+        run: npm run check:privacy
+
+      - name: Testes unitários (Vitest)
+        run: npm test
+
+  # ========= 4. E2E + acessibilidade (Playwright + axe-core) =========
+  e2e-acessibilidade:
+    name: E2E — Playwright, axe/WCAG e prova de privacidade
+    runs-on: ubuntu-latest
+    needs: [motor-wasm]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Baixa o engine/pkg compilado
+        uses: actions/download-artifact@v4
+        with:
+          name: engine-pkg
+          path: engine/pkg
+
+      - name: Instala dependências
+        run: npm ci
+
+      - name: Instala o Chromium do Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Testes E2E, acessibilidade (WCAG) e privacidade
+        run: npx playwright test
+
+      - name: Relatório do Playwright (apenas em falha)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report
+          retention-days: 7
+
+  # ============ 5. Verificação formal — Lean 4 (lake build) ============
+  lean4:
+    name: Lean 4 — verificação formal compila (lake build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instala o Lean via elan (toolchain do lean-toolchain)
+        run: |
+          curl -sSfL https://elan.lean-lang.org/elan-init.sh -o /tmp/elan-init.sh
+          sh /tmp/elan-init.sh -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Compila a verificação formal
+        working-directory: formal-verification
+        # O lakefile não tem dependências externas: o build é autossuficiente.
+        run: lake build

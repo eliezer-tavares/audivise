@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "Deutsch (Deutschland)",
+    "englishName": "German (Germany)",
+    "bcp47": "de-DE",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Microsoft Hedda", "Microsoft Katja", "Microsoft Conrad", "Google Deutsch", "Anna", "Markus"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "Bildausschnitt-Assistent, 100 % lokal"
+  },
+  "status": {
+    "ready": "Audivise ist bereit. Drücken Sie die Taste „Assistent starten“, um zu beginnen.",
+    "engineLoading": "Lokale Engine wird geladen…",
+    "engineReady": "Rust/WebAssembly-Engine bereit (Version {version}). Kein Internet. Keine Cloud. Nichts verlässt dieses Gerät.",
+    "engineError": "Fehler beim Laden der lokalen Engine: {error}",
+    "deviceMobile": "Erkannt: Smartphone",
+    "deviceDesktop": "Erkannt: Computer (Webcam)",
+    "cameraFrontMode": "Aktueller Modus: Frontkamera",
+    "cameraBackMode": "Aktueller Modus: Rückkamera oder Laptop-Kamera"
+  },
+  "buttons": {
+    "start": "Assistent starten",
+    "stop": "Assistent stoppen",
+    "repeat": "Letzten Hinweis wiederholen",
+    "cameraFront": "Kamera wechseln: Frontkamera",
+    "cameraBack": "Kamera wechseln: Rückkamera",
+    "about": "Über Audivise",
+    "settings": "Sprache & Stimme",
+    "close": "Schließen",
+    "ok": "Verstanden"
+  },
+  "aria": {
+    "start": "Bildausschnitt-Assistent starten oder stoppen",
+    "repeat": "Letzten gesprochenen Hinweis wiederholen",
+    "camera": "Zwischen Frontkamera und Rückkamera wechseln",
+    "about": "Informationen über das Audivise-Projekt anhören",
+    "settings": "Einstellungen für Sprache und Stimme öffnen",
+    "closeSettings": "Die Einstellungen schließen",
+    "interfaceLanguage": "Sprache der Oberfläche auswählen",
+    "voiceLanguage": "Sprache der Stimme auswählen",
+    "voiceSelect": "Installierte Stimme für die gewählte Sprache auswählen",
+    "rate": "Sprechgeschwindigkeit anpassen",
+    "status": "Status des Assistenten"
+  },
+  "fileProtocol": {
+    "warning": "Sie haben index.html direkt von der Festplatte geöffnet. Aus Sicherheitsgründen des Browsers benötigen Kamera und Engine einen lokalen Server: Schließen Sie diesen Tab und starten Sie die App über die Datei für Ihr System — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux) oder iniciar-audivise-android.sh (Android, über Termux).",
+    "blocked": "Diese App muss über den lokalen Starter geöffnet werden. Schließen Sie diesen Tab und doppelklicken Sie auf den Starter für Ihr System (INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "Kamera aktiv. Ich analysiere Ihr Gesicht.",
+    "cameraError": "Fehler beim Zugriff auf die Kamera. Bitte prüfen Sie die Browser-Berechtigung.",
+    "stopped": "Assistent gestoppt.",
+    "noFace": "Ich habe Ihr Gesicht nicht gefunden. Bitte prüfen Sie, ob die Kamera eingeschaltet und nicht blockiert ist.",
+    "nothingToRepeat": "Es gibt noch keine Hinweise zum Wiederholen.",
+    "engineLoading": "Die Engine lädt noch. Bitte versuchen Sie es gleich erneut.",
+    "cameraRestartError": "Ich konnte die Kamera nicht neu starten.",
+    "frontSelected": "Frontkamera ausgewählt.",
+    "backSelected": "Rückkamera ausgewählt."
+  },
+  "issues": {
+    "MOVE_RIGHT": "bewegen Sie das Telefon nach rechts",
+    "MOVE_LEFT": "bewegen Sie das Telefon nach links",
+    "LOWER_CAMERA": "senken Sie die Kamera ein wenig",
+    "RAISE_CAMERA": "heben Sie die Kamera ein wenig an",
+    "MOVE_CLOSER": "bringen Sie Ihr Gesicht näher an die Kamera",
+    "MOVE_AWAY": "bewegen Sie Ihr Gesicht von der Kamera weg"
+  },
+  "verdict": {
+    "perfect": "Perfekter Bildausschnitt! Sie können mit der Aufnahme beginnen."
+  },
+  "about": {
+    "narrative": "Audivise, Version 1, lokale und private Ausgabe. Systemarchitektur von Eliezer Tavares de Oliveira. Dies ist die Fortsetzung der Arbeit, die im Projeto Integrador V (Integriertes Projekt V) des Informatikstudiengangs der Univesp begonnen wurde. Es ist inzwischen ein persönliches, nicht-akademisches Projekt. Diese Ausgabe läuft vollständig auf Ihrem Gerät: Die Entscheidungs-Engine ist in Rust geschrieben und zu WebAssembly kompiliert, die Gesichtserkennung erfolgt lokal. Kein Bild, keine Koordinate und kein Wort verlässt Ihren Rechner."
+  },
+  "settings": {
+    "title": "Sprache und Stimme",
+    "interfaceLanguage": "Sprache der Oberfläche",
+    "voiceLanguage": "Sprache der Stimme",
+    "voice": "Installierte Stimme",
+    "voiceSystemDefault": "Standardstimme des Systems für diese Sprache",
+    "voiceNone": "Keine Stimme für diese Sprache installiert",
+    "speechRate": "Sprechgeschwindigkeit",
+    "saved": "Einstellungen gespeichert.",
+    "testVoice": "Stimme testen"
+  },
+  "voiceInstall": {
+    "title": "Keine Stimme auf diesem System gefunden",
+    "intro": "Für {language} ist keine Stimme installiert. Um die Hinweise in dieser Sprache zu hören, installieren Sie eine Systemstimme — das ist nur einmal erforderlich:",
+    "windows": "Windows: Einstellungen → Zeit und Sprache → Sprache → Stimmen verwalten → Stimmen hinzufügen → wählen Sie {language}.",
+    "macos": "macOS: Systemeinstellungen → Bedienungshilfen → Gesprochene Inhalte → Systemstimme → Stimmen verwalten → laden Sie eine Stimme für {language} herunter.",
+    "android": "Android: Einstellungen → System → Sprachen & Eingabe → Ausgabe → Sprachausgabe → Google Text-to-Speech → Sprachdaten installieren → {language}.",
+    "ios": "iPhone/iPad: Einstellungen → Bedienungshilfen → Gesprochene Inhalte → Stimmen → fügen Sie eine Stimme für {language} hinzu.",
+    "linux": "Linux: Installieren Sie speech-dispatcher mit einer Stimme für {language} (zum Beispiel espeak-ng oder RHVoice), oder verwenden Sie Google Chrome, das eigene Stimmen mitbringt.",
+    "chrome": "Chrome: Die Google-Stimmen sind meist bereits vorhanden; stellen Sie sicher, dass der Browser aktuell ist, und tippen Sie auf Erneut prüfen.",
+    "recheck": "Erneut prüfen",
+    "once": "Dieser Hinweis erscheint nur einmal pro Sprache. Audivise funktioniert auch ohne Stimme: Alle Hinweise werden zusätzlich als Text angezeigt."
+  },
+  "footer": {
+    "architect": "Architektur von Eliezer Tavares de Oliveira.",
+    "history": "Fortsetzung der Arbeit, die im Projeto Integrador V (Integriertes Projekt V) des Informatikstudiengangs der UNIVESP begonnen wurde — heute ein persönliches, nicht-akademisches Projekt. Die gesamte Verarbeitung findet auf diesem Gerät statt, ohne Cloud."
+  }
+}

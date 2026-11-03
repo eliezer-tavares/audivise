@@ -1,0 +1,104 @@
+{
+  "meta": {
+    "nativeName": "Kiswahili (Kenya)",
+    "englishName": "Swahili (Kenya)",
+    "bcp47": "sw-KE",
+    "dir": "ltr",
+    "sentenceSeparator": ". ",
+    "voiceHints": ["Microsoft Zuri", "Microsoft Rafiki", "Google Kiswahili", "eSpeak Kiswahili"]
+  },
+  "app": {
+    "title": "Audivise",
+    "tagline": "Msaidizi wa kupanga picha — 100% ndani ya kifaa"
+  },
+  "status": {
+    "ready": "Audivise iko tayari. Bonyeza kitufe cha Anzisha Msaidizi ili kuanza.",
+    "engineLoading": "Inapakia injini ya ndani…",
+    "engineReady": "Injini ya Rust/WebAssembly iko tayari (toleo {version}). Hakuna mtandao. Hakuna wingu. Hakuna kitu kinachotoka kwenye kifaa hiki.",
+    "engineError": "Imeshindwa kupakia injini ya ndani: {error}",
+    "deviceMobile": "Kimegunduliwa: simu ya mkononi",
+    "deviceDesktop": "Kimegunduliwa: kompyuta (kamera ya wavu)",
+    "cameraFrontMode": "Hali ya sasa: kamera ya mbele",
+    "cameraBackMode": "Hali ya sasa: kamera ya nyuma au kamera ya laptop"
+  },
+  "buttons": {
+    "start": "Anzisha Msaidizi",
+    "stop": "Simamisha Msaidizi",
+    "repeat": "Rudia Ushauri wa Mwisho",
+    "cameraFront": "Badilisha Kamera: Mbele",
+    "cameraBack": "Badilisha Kamera: Nyuma",
+    "about": "Kuhusu Audivise",
+    "settings": "Lugha na Sauti",
+    "close": "Funga",
+    "ok": "Nimeelewa"
+  },
+  "aria": {
+    "start": "Anzisha au simamisha msaidizi wa kupanga picha",
+    "repeat": "Rudia ushauri wa mwisho uliosemwa",
+    "camera": "Badilisha kati ya kamera ya mbele na kamera ya nyuma",
+    "about": "Sikiliza maelezo kuhusu mradi wa Audivise",
+    "settings": "Fungua mipangilio ya lugha na sauti",
+    "closeSettings": "Funga mipangilio",
+    "interfaceLanguage": "Chagua lugha ya kiolesura",
+    "voiceLanguage": "Chagua lugha ya sauti",
+    "voiceSelect": "Chagua sauti iliyosakinishwa kwa lugha iliyochaguliwa",
+    "rate": "Rekebisha kasi ya usemi",
+    "status": "Hali ya msaidizi"
+  },
+  "fileProtocol": {
+    "warning": "Umefungua index.html moja kwa moja kutoka kwenye diski. Kwa sababu ya kanuni za usalama za kivinjari, kamera na injini zinahitaji seva ya ndani: funga kichupo hiki, kisha anzisha kwa faili la kizinduzi la mfumo wako — INICIAR-AUDIVISE.bat (Windows), iniciar-audivise-mac.command (macOS), iniciar-audivise-linux.sh (Linux) au iniciar-audivise-android.sh (Android, kwa kutumia Termux).",
+    "blocked": "Programu hii lazima ifunguliwe kwa kizinduzi cha ndani. Funga kichupo hiki kisha bofya mara mbili kizinduzi cha mfumo wako (INICIAR-AUDIVISE)."
+  },
+  "speech": {
+    "cameraOn": "Kamera imewaka. Ninachambua uso wako.",
+    "cameraError": "Hitilafu katika kufikia kamera. Angalia ruhusa ya kivinjari.",
+    "stopped": "Msaidizi amesimamishwa.",
+    "noFace": "Sikupata uso wako. Hakikisha kamera imewashwa na haijafunikwa.",
+    "nothingToRepeat": "Bado hakuna ushauri wa kurudia.",
+    "engineLoading": "Injini bado inapakia. Jaribu tena baada ya kidogo.",
+    "cameraRestartError": "Sikuweza kuanzisha upya kamera.",
+    "frontSelected": "Kamera ya mbele imechaguliwa.",
+    "backSelected": "Kamera ya nyuma imechaguliwa."
+  },
+  "issues": {
+    "MOVE_RIGHT": "hamisha simu kuelekea kulia",
+    "MOVE_LEFT": "hamisha simu kuelekea kushoto",
+    "LOWER_CAMERA": "shusha kamera kidogo",
+    "RAISE_CAMERA": "pandisha kamera kidogo",
+    "MOVE_CLOSER": "sogeza uso wako karibu na kamera",
+    "MOVE_AWAY": "sogeza uso wako mbali na kamera"
+  },
+  "verdict": {
+    "perfect": "Mpangilio wa picha ni kamili! Unaweza kuanza kurekodi."
+  },
+  "about": {
+    "narrative": "Audivise, toleo la 1, toleo la ndani na la faragha. Mfumo umesanifiwa na Eliezer Tavares de Oliveira. Huu ni uendelezaji wa kazi iliyoanza katika Projeto Integrador V (Mradi wa Kuunganisha V, PI-V) wa kozi ya Uhandisi wa Kompyuta katika UNIVESP. Sasa ni mradi wa kibinafsi, si wa kitaaluma. Toleo hili linafanya kazi kikamilifu ndani ya kifaa chako: injini ya maamuzi imeandikwa kwa Rust na imeikusanywa kuwa WebAssembly, na utambuzi wa uso unafanyika ndani ya kifaa. Hakuna picha, namba za eneo wala neno linalotoka kwenye kompyuta yako."
+  },
+  "settings": {
+    "title": "Lugha na sauti",
+    "interfaceLanguage": "Lugha ya kiolesura",
+    "voiceLanguage": "Lugha ya sauti",
+    "voice": "Sauti iliyosakinishwa",
+    "voiceSystemDefault": "Sauti chaguo-msingi ya mfumo kwa lugha hii",
+    "voiceNone": "Hakuna sauti iliyosakinishwa kwa lugha hii",
+    "speechRate": "Kasi ya usemi",
+    "saved": "Mapendeleo yamehifadhiwa.",
+    "testVoice": "Jaribu sauti"
+  },
+  "voiceInstall": {
+    "title": "Hakuna sauti iliyopatikana kwenye mfumo huu",
+    "intro": "Hakuna sauti iliyosakinishwa kwa {language}. Ili kusikia ushauri kwa lugha hii, sakinisha sauti ya mfumo — hii inahitajika mara moja tu:",
+    "windows": "Windows: Mipangilio → Muda na Lugha → Usemi → Dhibiti sauti → Ongeza sauti → chagua {language}.",
+    "macos": "macOS: Mipangilio ya Mfumo → Ufikiaji → Maudhui Yanayozungumzwa → Sauti ya Mfumo → Dhibiti Sauti → pakua sauti ya {language}.",
+    "android": "Android: Mipangilio → Mfumo → Lugha na pembejeo → Pato → Maandishi-kwa-sauti → Google Text-to-Speech → Sakinisha data za sauti → {language}.",
+    "ios": "iPhone/iPad: Mipangilio → Ufikiaji → Maudhui Yanayozungumzwa → Sauti → ongeza sauti kwa {language}.",
+    "linux": "Linux: sakinisha speech-dispatcher pamoja na sauti ya {language} (kwa mfano, espeak-ng au RHVoice), au tumia Google Chrome, ambayo ina sauti zake zenyewe.",
+    "chrome": "Chrome: sauti za Google kwa kawaida huwepo tayari; hakikisha kivinjari kimeboreshwa, kisha bofya Angalia tena.",
+    "recheck": "Angalia tena",
+    "once": "Taarifa hii inaonekana mara moja tu kwa kila lugha. Audivise inafanya kazi hata bila sauti: kila ushauri huonyeshwa pia kama maandishi."
+  },
+  "footer": {
+    "architect": "Imesanifiwa na Eliezer Tavares de Oliveira.",
+    "history": "Uendelezaji wa kazi iliyoanza katika Projeto Integrador V (PI-V) wa kozi ya Uhandisi wa Kompyuta katika UNIVESP — sasa ni mradi wa kibinafsi, si wa kitaaluma. Usindikaji wote unafanyika kwenye kifaa hiki, bila wingu."
+  }
+}

@@ -1,0 +1,147 @@
+<!--
+===========================================================================
+COPYRIGHT (C) 2026 ELIEZER TAVARES DE OLIVEIRA
+PROJECT / PROJETO: AUDIVISE 1.0
+CONTEXT / CONTEXTO:
+  Continuação do Projeto Integrador V - Engenharia de Computação (UNIVESP).
+  Projeto pessoal e não acadêmico.
+  Arquitetado por Eliezer Tavares de Oliveira.
+LICENSE / LICENÇA: GNU General Public License v3.0 (GPLv3)
+===========================================================================
+Funciona 100% offline: detecção facial (MediaPipe) e o motor de decisão
+(Rust compilado para WebAssembly) rodam dentro do navegador.
+Interface e voz disponíveis em 27 idiomas, escolhidos pelo usuário.
+Nenhuma imagem, coordenada ou voz sai deste dispositivo.
+===========================================================================
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Audivise 1.0 — assistente de enquadramento facial acessível, 100% local.">
+    <title>Audivise 1.0</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="icons/icon-192.png" type="image/png">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <meta name="theme-color" content="#121212">
+
+    <!-- MediaPipe embutido no pacote (sem CDN, sem internet).
+         Versão fixada 0.4.1646425229: a release seguinte (0.4.1657299874+)
+         quebrou a detecção facial — ver issue #3504 do MediaPipe. -->
+    <script src="vendor/mediapipe/camera_utils.js"></script>
+    <script src="vendor/mediapipe/face_detection.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main>
+        <!-- aria-live garante que leitores de tela anunciem cada orientação.
+             Botões e campos com texto visível NÃO usam aria-label (WCAG
+             2.5.3 Label in Name: o nome acessível é o próprio texto). -->
+        <h1 id="statusText" aria-live="assertive" role="status"
+            data-i18n="status.ready">
+            Audivise pronto. Pressione o botão Iniciar Assistente para começar.
+        </h1>
+
+        <p id="engineStatus" aria-live="polite" data-i18n="status.engineLoading">Carregando motor local…</p>
+        <div id="deviceInfo" class="device-info" aria-live="polite"></div>
+
+        <video id="inputVideo" playsinline autoplay muted></video>
+
+        <button id="startBtn" data-i18n="buttons.start">
+            Iniciar Assistente
+        </button>
+
+        <button id="repeatBtn" data-i18n="buttons.repeat">
+            Repetir Última Orientação
+        </button>
+
+        <button id="cameraBtn" data-i18n="buttons.cameraFront">
+            Trocar Câmera: Frontal
+        </button>
+
+        <button id="aboutBtn" data-i18n="buttons.about">
+            Sobre o Audivise
+        </button>
+
+        <button id="settingsBtn" class="secondary" data-i18n="buttons.settings">
+            Idioma e Voz
+        </button>
+    </main>
+
+    <!-- ===================== CONFIGURAÇÕES: IDIOMA E VOZ ===================== -->
+    <dialog id="settingsDialog" aria-labelledby="settingsTitle">
+        <form method="dialog">
+            <h2 id="settingsTitle" data-i18n="settings.title">Idioma e voz</h2>
+
+            <label for="interfaceLangSelect" data-i18n="settings.interfaceLanguage">Idioma da interface</label>
+            <select id="interfaceLangSelect"></select>
+
+            <label for="voiceLangSelect" data-i18n="settings.voiceLanguage">Idioma da voz</label>
+            <select id="voiceLangSelect"></select>
+
+            <label for="voiceSelect" data-i18n="settings.voice">Voz instalada</label>
+            <select id="voiceSelect"></select>
+
+            <label for="rateRange" data-i18n="settings.speechRate">Velocidade da fala</label>
+            <div class="rate-row">
+                <input type="range" id="rateRange" min="0.5" max="2" step="0.1" value="1">
+                <output id="rateValue" for="rateRange">1.0</output>
+            </div>
+
+            <div class="dialog-actions">
+                <button type="button" id="testVoiceBtn" class="secondary" data-i18n="settings.testVoice">Testar voz</button>
+                <button type="button" id="settingsCloseBtn" data-i18n="buttons.close">Fechar</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- ============ ONBOARDING DE INSTALAÇÃO DE VOZ (1º uso) ============ -->
+    <dialog id="voiceInstallDialog" aria-labelledby="voiceInstallTitle">
+        <h2 id="voiceInstallTitle" data-i18n="voiceInstall.title">Voz não encontrada neste sistema</h2>
+        <p id="voiceInstallIntro"></p>
+        <ul id="voiceInstallSteps">
+            <li data-i18n="voiceInstall.windows"></li>
+            <li data-i18n="voiceInstall.macos"></li>
+            <li data-i18n="voiceInstall.android"></li>
+            <li data-i18n="voiceInstall.ios"></li>
+            <li data-i18n="voiceInstall.linux"></li>
+            <li data-i18n="voiceInstall.chrome"></li>
+        </ul>
+        <p id="voiceInstallOnce" class="muted" data-i18n="voiceInstall.once"></p>
+        <div class="dialog-actions">
+            <button type="button" id="voiceRecheckBtn" class="secondary" data-i18n="voiceInstall.recheck">Verificar novamente</button>
+            <button type="button" id="voiceOkBtn" data-i18n="buttons.ok">Entendi</button>
+        </div>
+    </dialog>
+
+    <footer>
+        <strong id="footerArchitect" data-i18n="footer.architect">Arquitetado por Eliezer Tavares de Oliveira.</strong><br>
+        <span data-i18n="footer.history"></span>
+    </footer>
+
+    <!-- Aviso de abertura pelo disco: em file:// o navegador bloqueia módulos
+         ES (CORS), por isto este aviso é um script clássico inline, escrito
+         antes de qualquer carregamento e funcional sem rede e sem i18n. -->
+    <script>
+        if (location.protocol === 'file:') {
+            var aviso = document.getElementById('engineStatus');
+            if (aviso) {
+                aviso.textContent = 'AVISO / WARNING / 警告 / تحذير: '
+                    + 'abra o Audivise pelo iniciador local — '
+                    + 'INICIAR-AUDIVISE.bat (Windows), '
+                    + 'iniciar-audivise-mac.command (macOS), '
+                    + 'iniciar-audivise-linux.sh (Linux) ou '
+                    + 'iniciar-audivise-android.sh (Android/Termux).';
+                aviso.setAttribute('role', 'alert');
+            }
+        }
+    </script>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
