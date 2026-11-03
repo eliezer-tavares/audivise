@@ -95,10 +95,20 @@ jobs:
       - name: Gera o glue JS (wasm-bindgen --target web)
         run: wasm-bindgen --target web --out-dir pkg target/wasm32-unknown-unknown/release/audivise_engine.wasm
 
+      - name: Instala o Google Chrome (binário oficial do Google)
+        # O ubuntu-latest migrou para o Ubuntu 26 em out/2026 e a imagem pode
+        # não incluir mais o Chrome pré-instalado. Instalar aqui garante o
+        # binário google-chrome para o wasm-bindgen-test-runner.
+        run: |
+          wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/chrome.deb
+          sudo apt-get install -y /tmp/chrome.deb
+          google-chrome --version
+
       - name: Testes dentro do WASM real (navegador headless)
         env:
           CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_RUNNER: wasm-bindgen-test-runner
           CHROME_BIN: google-chrome
+          WASM_BINDGEN_TEST_TIMEOUT: "120"
         run: cargo test --target wasm32-unknown-unknown
 
       - name: Publica o artefato engine/pkg

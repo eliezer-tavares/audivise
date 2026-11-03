@@ -25,7 +25,10 @@ crate-type = ["cdylib", "rlib"]
 wasm-bindgen = "0.2"
 
 [dev-dependencies]
-wasm-bindgen-test = "0.3"
+# Fixado em 0.2.130 em lockstep com o wasm-bindgen 0.2.130 do [dependencies] e
+# com o wasm-bindgen-test-runner 0.2.130 instalado no CI — o protocolo entre a
+# crate de teste e o runner precisa ser idêntico.
+wasm-bindgen-test = "=0.2.130"
 
 [profile.release]
 opt-level = "s"
