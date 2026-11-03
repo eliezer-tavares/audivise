@@ -20,7 +20,7 @@ wasm_bindgen_test_configure!(run_in_browser);
 
 #[wasm_bindgen_test]
 fn centro_produz_verdict_perfect() {
-    let r = audivise_engine::analisar_enquadramento(0.5, 0.5, 0.25, 0.25);
+    let r = audivise_engine::analisar_enquadramento(0.5, 0.5, 0.5, 0.6);
     assert!(r.contains("\"is_perfect\":true"));
     assert!(r.contains("\"verdict\":\"PERFECT\""));
     assert!(r.contains("\"issues\":[]"));

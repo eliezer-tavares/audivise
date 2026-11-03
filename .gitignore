@@ -31,3 +31,6 @@ desktop.ini
 tmp/
 .elan/
 elan-init.sh
+
+# Artefatos locais do cargo na raiz
+target/
