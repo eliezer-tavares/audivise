@@ -23,7 +23,7 @@
         "check": "npm run check:integrity && npm run check:privacy"
     },
     "devDependencies": {
-        "@playwright/test": "^1.49.1",
+        "@playwright/test": "^1.65.0",
         "axe-core": "^4.10.2",
         "vitest": "^3.0.5"
     }
